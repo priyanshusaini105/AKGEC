@@ -1,0 +1,3 @@
+add loader until checking auth state 
+in stacknaviagtor
+crate a sttate for setting inital 

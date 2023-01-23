@@ -1,4 +1,4 @@
-package com.akgec;
+package com.priyanshusaini.akgec;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

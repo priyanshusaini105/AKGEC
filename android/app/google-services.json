@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1030453683340",
+    "firebase_url": "https://akgecerp-default-rtdb.firebaseio.com",
+    "project_id": "akgecerp",
+    "storage_bucket": "akgecerp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030453683340:android:5c4dd0d7587e5c655647a9",
+        "android_client_info": {
+          "package_name": "com.priyanshusaini.akgec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030453683340-136r53r204pskcilf1hj2d8j0db2kq9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.priyanshusaini.akgec",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1030453683340-lqtce9n8r256g9tmjt3gsio2tocpesjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB38vzlZ9ZHNh94LDo4FpnUKwvK2VrF2Xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030453683340-lqtce9n8r256g9tmjt3gsio2tocpesjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

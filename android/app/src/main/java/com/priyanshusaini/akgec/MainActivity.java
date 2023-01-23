@@ -1,4 +1,4 @@
-package com.akgec;
+package com.priyanshusaini.akgec;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
