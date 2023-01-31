@@ -1,12 +1,15 @@
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
 import {Dashboard, SignIn, SplashScreen, ForgotPassword} from '../screens';
-import {useState, useEffect} from 'react';
-import type {StackNavType} from './types';
-import {Easing, View} from 'react-native';
+import {useEffect} from 'react';
+import type {IStackNavType} from './types';
+import {Alert, Easing} from 'react-native';
 import {TransitionSpec} from '@react-navigation/stack/lib/typescript/src/types';
-import auth from '@react-native-firebase/auth';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '../redux/store';
+import unsubscriber from '../actions/authActions';
+import NetInfo from '@react-native-community/netinfo';
 
-const Stack = createStackNavigator<StackNavType>();
+const Stack = createStackNavigator<IStackNavType>();
 
 // screen translations animation
 const config: TransitionSpec = {
@@ -29,29 +32,21 @@ const closeConfig: TransitionSpec = {
   },
 };
 
+const unsubscribe = NetInfo.addEventListener(state => {
+  if (!state.isConnected) Alert.alert("Connect To Internet");
+});
+unsubscribe()
+
 const StackNavigator = () => {
-  const [isFirstLaunch, setIsFirstLaunch] = useState<boolean | null>(null);
+  const dispatch = useDispatch();
+  const authState = useSelector((state: RootState) => state.auth);
 
-  const checkIfFirstLaunch: () => Promise<boolean> = async () => {
-    try {
-      auth().onAuthStateChanged(user => {
-        return true;
-      });
-      return false;
-    } catch (error) {
-      return false;
-    }
-  };
-
+  // Handle user state changes=================>
   useEffect(() => {
-    (async () => {
-      const firstLaunch = await checkIfFirstLaunch();
-      setIsFirstLaunch(firstLaunch);
-    })();
+    return unsubscriber(dispatch); // unsubscribe on unmount
   }, []);
-
-  return isFirstLaunch === null ? (
-    <View></View>
+  return authState.isAuth === null || authState.status === 'loading' ? (
+    <SplashScreen />
   ) : (
     <Stack.Navigator
       screenOptions={{
@@ -66,11 +61,10 @@ const StackNavigator = () => {
         headerMode: 'float',
       }}
       // animation='fade'
-      initialRouteName="SignIn">
+      initialRouteName={authState.isAuth ? 'Dashboard' : 'SignIn'}>
       <Stack.Screen name="SignIn" component={SignIn} />
-      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
-      {isFirstLaunch && <Stack.Screen name="Intro" component={SplashScreen} />}
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
     </Stack.Navigator>
   );
 };

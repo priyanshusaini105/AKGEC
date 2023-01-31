@@ -1,4 +1,4 @@
-export type StackNavType={
+export type IStackNavType={
     Dashboard:undefined;
     Intro:undefined;
     Home:undefined;

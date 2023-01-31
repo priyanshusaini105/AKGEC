@@ -7,7 +7,9 @@
  */
 
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import StackNavigator from './src/navigation/StackNavigator';
+import {Provider} from 'react-redux';
+import StackNavigator from './navigation/StackNavigator';
+import {store} from './redux/store';
 
 const theme = {
   ...DefaultTheme,
@@ -19,9 +21,11 @@ const theme = {
 
 const App = () => {
   return (
+    <Provider store={store}>
       <NavigationContainer theme={theme}>
         <StackNavigator />
       </NavigationContainer>
+    </Provider>
   );
 };
 

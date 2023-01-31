@@ -51,7 +51,7 @@ const SignIn = () => {
       .signInWithEmailAndPassword(email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log(user);
+        console.log(user.getIdToken());
         if (user) navigation.replace('Dashboard');
         setIsLoading(false);
       })

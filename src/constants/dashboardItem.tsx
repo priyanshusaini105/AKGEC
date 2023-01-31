@@ -1,7 +1,7 @@
-import { DashboardItem } from "./types";
+import { IDashboardItem } from "./types";
 import { AssignmentIcon,TimeTableIcon,DateSheetIcon, ChangePasswordIcon ,EventsIcon, LogoutIcon, DocumentsIcon, NoticeIcon, HostelIcon, HolidayIcon, ResultIcon, GroupChatIcon} from '../svg'
 
-export const dashboardItems:Array<DashboardItem> = [
+export const dashboardItems:Array<IDashboardItem> = [
     {
         id: '2',
         name: "Documents",

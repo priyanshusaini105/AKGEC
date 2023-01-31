@@ -3,4 +3,5 @@ import TextInput from './TextInput'
 import IButton from './IButton';
 import KeyboardHide from './KeyboardHide';
 import BackButton from './BackButton';
-export {Layout,TextInput,IButton,KeyboardHide,BackButton}
+import DashboardItemTiles from './DashboardItemTiles';
+export {Layout,TextInput,IButton,KeyboardHide,BackButton,DashboardItemTiles}
