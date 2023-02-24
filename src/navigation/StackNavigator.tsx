@@ -1,5 +1,5 @@
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import {Dashboard, SignIn, SplashScreen, ForgotPassword} from '../screens';
+import {Dashboard, SignIn, SplashScreen, ForgotPassword,Profile, Attendace} from '../screens';
 import {useEffect} from 'react';
 import type {IStackNavType} from './types';
 import {Alert, Easing} from 'react-native';
@@ -64,7 +64,9 @@ const StackNavigator = () => {
       initialRouteName={authState.isAuth ? 'Dashboard' : 'SignIn'}>
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="Dashboard" component={Dashboard} />
+      <Stack.Screen name="Profile" component={Profile}/>
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="Attendace" component={Attendace} />
     </Stack.Navigator>
   );
 };

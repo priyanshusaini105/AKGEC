@@ -8,10 +8,12 @@ export interface IStudentAuthState {
 
 export type IAuthStatus = 'idle' | 'loading' | 'failed';
 
+export interface IStudentAttendaceType {
+  attendance: number | null;
+}
 export interface IStudentDataType {
   uid: string | null;
   sid: number | null;
-  attendance: number | null;
   feeDue: number | null;
   studentInfo: {
     name: string | null;
@@ -24,6 +26,7 @@ export interface IStudentDataType {
     sem: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | null;
   };
 }
+export interface IStudentProfileType extends IStudentAttendaceType,IStudentDataType {}
 export type IDashboardItem = {
   id: string;
   name: string;

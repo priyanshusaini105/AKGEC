@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "npx react-native run-android",
+    "fab": "npx react-native run-android --active-arch-only",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
@@ -21,6 +22,7 @@
     "react": "18.2.0",
     "react-hook-form": "^7.42.1",
     "react-native": "0.71.1",
+    "react-native-calendars": "^1.1293.0",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-linear-gradient": "^2.6.2",

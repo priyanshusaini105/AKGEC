@@ -14,21 +14,21 @@ import {useForm} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
+import {IStackNavType} from '../../navigation/types';
+import { ResuasbleStyles } from '../../constants';
 
 const EMAIL_REGEX: RegExp =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)$/;
 const PASS_REGEX = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-export type RootStackParamList = {
-  Dashboard: undefined;
-  ForgotPassword:undefined;
-};
+const {roundedLayout}=ResuasbleStyles;
+
 
 const SignIn = () => {
   // activity indicator loading state
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<StackNavigationProp<IStackNavType>>();
 
   // setting react form hook>>==================>>
 
@@ -63,8 +63,8 @@ const SignIn = () => {
   };
 
   // forgot password
-  const handleForgotPassword  = () => {
-    navigation.navigate("ForgotPassword")
+  const handleForgotPassword = () => {
+    navigation.navigate('ForgotPassword');
   };
 
   // getting windows dimensio s
@@ -77,7 +77,7 @@ const SignIn = () => {
           <View></View>
           <SignInBg style={tw`top-10 ml-5`} />
         </View>
-        <View style={tw`bg-white h-11/15 rounded-t-10 p-10`}>
+        <View style={[roundedLayout,tw`h-11/15 p-10`]}>
           <Text style={tw`text-slate-700 text-7 font-bold mt-8`}>
             Hi, Student
           </Text>
@@ -137,7 +137,9 @@ const SignIn = () => {
           )}
           {/* forgo password */}
           <TouchableOpacity style={tw`self-end`}>
-            <Text style={tw`text-slate-500`} onPress={() => handleForgotPassword ()}>
+            <Text
+              style={tw`text-slate-500`}
+              onPress={() => handleForgotPassword()}>
               Forgot Password ?
             </Text>
           </TouchableOpacity>
@@ -147,8 +149,7 @@ const SignIn = () => {
         <View
           style={tw`absolute w-full h-full ${
             isLoading ? 'bg-slate-400 opacity-50' : 'hidden'
-          }`}>
-        </View>
+          }`}></View>
         <View
           style={tw`absolute w-full h-full items-center justify-center z-99 ${
             isLoading ? '' : 'hidden'

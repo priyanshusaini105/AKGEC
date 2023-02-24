@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import tw from 'twrnc';
 import Svg, {Path} from 'react-native-svg';
 
-const BackButton = ({children}: {children: JSX.Element}) => {
+const ScreenWithBackButtonView = ({children}: {children: JSX.Element}) => {
   const navigation = useNavigation();
   return (
     <View>
@@ -29,4 +29,4 @@ const BackButton = ({children}: {children: JSX.Element}) => {
   );
 };
 
-export default BackButton;
+export default ScreenWithBackButtonView;

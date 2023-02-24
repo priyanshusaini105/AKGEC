@@ -1,3 +1,4 @@
 use memo or use collback 
 to improvement app performance
 label
+CREATE TABLE student_profile (student_id int PRIMARY KEY UNIQUE,first_name varchar(50) NOT NULL,last_name varchar(50) ,email varchar(100) UNIQUE NOT NULL, enrollment_date date NOT NULL,graduation_year date,  course varchar(20) NOT NULL, branch varchar(50),sem int,session varchar(8) , address varchar(255),  phone varchar(15));

@@ -2,33 +2,32 @@ import {
   View,
   Text,
   useWindowDimensions,
-  TouchableOpacity,
   Alert,
   ActivityIndicator,
 } from 'react-native';
 import React, {useState} from 'react';
 import tw from 'twrnc';
 import {SignInBg} from '../../svg';
-import {IButton, TextInput, KeyboardHide} from '../../components';
+import {IButton, TextInput, KeyboardHide, ScreenWithBackButtonView} from '../../components';
 import {useForm} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
-import BackButton from '../../components/BackButton';
+import {IStackNavType} from '../../navigation/types';
+import { ResuasbleStyles } from '../../constants';
 
 const EMAIL_REGEX: RegExp =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)$/;
 const PASS_REGEX = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-export type RootStackParamList = {
-  SignIn: undefined;
-};
+const {roundedLayout}=ResuasbleStyles;
+
 
 const ForgotPassword = () => {
   // activity indicator loading state
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const {navigate} = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const {navigate} = useNavigation<StackNavigationProp<IStackNavType>>();
 
   // setting react form hook>>==================>>
 
@@ -75,13 +74,13 @@ const ForgotPassword = () => {
 
   return (
     <KeyboardHide>
-      <BackButton>
+      <ScreenWithBackButtonView>
         <View style={{height}}>
           <View style={tw`h-4/15 justify-around z-5 `}>
             <View></View>
             <SignInBg style={tw`top-10 ml-5`} />
           </View>
-          <View style={tw`bg-white h-11/15 rounded-t-10 p-10`}>
+          <View style={[roundedLayout,tw`h-11/15 p-10`]}>
             <Text style={tw`text-slate-700 text-7 font-bold mt-8`}>
               Forgot Password ?
             </Text>
@@ -128,7 +127,7 @@ const ForgotPassword = () => {
             />
           </View>
         </View>
-      </BackButton>
+      </ScreenWithBackButtonView>
     </KeyboardHide>
   );
 };

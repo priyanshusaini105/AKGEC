@@ -4,4 +4,6 @@ export type IStackNavType={
     Home:undefined;
     SignIn:undefined;
     ForgotPassword:undefined;
+    Profile:undefined;
+    Attendace:undefined
 };

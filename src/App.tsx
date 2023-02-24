@@ -5,7 +5,6 @@
  * @format
  * @flow strict-local
  */
-
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import StackNavigator from './navigation/StackNavigator';
@@ -19,13 +18,17 @@ const theme = {
   },
 };
 
+
+
+
 const App = () => {
+  
   return (
-    <Provider store={store}>
-      <NavigationContainer theme={theme}>
-        <StackNavigator />
-      </NavigationContainer>
-    </Provider>
+      <Provider store={store}>
+        <NavigationContainer theme={theme}>
+          <StackNavigator />
+        </NavigationContainer>
+      </Provider>
   );
 };
 

@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IStudentDataType} from '../../../constants/types';
+import { IStudentDataType, IStudentAttendaceType, IStudentProfileType } from '../../../constants/types';
 
-const initialState: IStudentDataType = {
+const initialState: IStudentProfileType = {
   uid: null,
   attendance: null,
   sid: null,
@@ -25,7 +25,6 @@ export const studentDataSlice = createSlice({
     setData: (state, action: PayloadAction<IStudentDataType>) => {
       state.uid = action.payload.uid;
       state.sid = action.payload.sid;
-      state.attendance = action.payload.attendance;
       state.feeDue = action.payload.feeDue;
       state.studentInfo.name = action.payload.studentInfo.name;
       state.studentInfo.email = action.payload.studentInfo.email;
@@ -36,9 +35,12 @@ export const studentDataSlice = createSlice({
       state.studentInfo.year = action.payload.studentInfo.year;
       state.studentInfo.sem = action.payload.studentInfo.sem;
     },
+    getAttendance:(state,action:PayloadAction<IStudentAttendaceType>)=>{
+      state.attendance= action.payload.attendance
+    }
   },
 });
 
-export const {setData} = studentDataSlice.actions;
+export const {setData,getAttendance} = studentDataSlice.actions;
 
 export default studentDataSlice.reducer;
