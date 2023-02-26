@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IAuthStatus, IStudentAuthState} from '../../../constants/types';
+import {TAUthStatus, IStudentAuthState} from '../../../constants/types';
 
 const initialState: IStudentAuthState = {
   uid: null,
@@ -20,7 +20,7 @@ export const authSlice = createSlice({
       state.isAuth = action.payload.isAuth;
       state.status = action.payload?.status;
     },
-    setLoading: (state, action: PayloadAction<IAuthStatus>) => {
+    setLoading: (state, action: PayloadAction<TAUthStatus>) => {
       state.status = action.payload;
     },
   },

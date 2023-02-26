@@ -1,9 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import { IStudentDataType, IStudentAttendaceType, IStudentProfileType } from '../../../constants/types';
+import {IStudentDataType, IStudentProfileType} from '../../../constants/types';
 
 const initialState: IStudentProfileType = {
   uid: null,
-  attendance: null,
   sid: null,
   feeDue: null,
   studentInfo: {
@@ -35,12 +34,9 @@ export const studentDataSlice = createSlice({
       state.studentInfo.year = action.payload.studentInfo.year;
       state.studentInfo.sem = action.payload.studentInfo.sem;
     },
-    getAttendance:(state,action:PayloadAction<IStudentAttendaceType>)=>{
-      state.attendance= action.payload.attendance
-    }
   },
 });
 
-export const {setData,getAttendance} = studentDataSlice.actions;
+export const {setData} = studentDataSlice.actions;
 
 export default studentDataSlice.reducer;

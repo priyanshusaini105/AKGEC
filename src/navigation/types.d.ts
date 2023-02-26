@@ -5,5 +5,5 @@ export type IStackNavType={
     SignIn:undefined;
     ForgotPassword:undefined;
     Profile:undefined;
-    Attendace:undefined
+    Attendance:undefined
 };

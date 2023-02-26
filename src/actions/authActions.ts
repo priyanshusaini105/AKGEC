@@ -16,7 +16,7 @@ const unsubscriber = (dispatch: AppDispatch) =>
         }),
       );
       // fetching data of corressponding user
-      fetchStudentData(dispatch, 2210060);
+      fetchStudentData(dispatch, user.displayName??'invalid');
     } else {
       dispatch(
         setAuth({

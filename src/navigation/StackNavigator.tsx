@@ -51,7 +51,7 @@ const StackNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        gestureEnabled: true,
+        // gestureEnabled: true,
         ...TransitionPresets.SlideFromRightIOS,
         gestureDirection: 'horizontal',
         transitionSpec: {
@@ -66,7 +66,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="Profile" component={Profile}/>
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-      <Stack.Screen name="Attendace" component={Attendace} />
+      <Stack.Screen name="Attendance" component={Attendace} />
     </Stack.Navigator>
   );
 };

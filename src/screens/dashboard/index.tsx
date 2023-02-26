@@ -7,30 +7,34 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../redux/store/index';
 import DashboardHeader from './DashboardHeader';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { IStackNavType } from '../../navigation/types';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {IStackNavType} from '../../navigation/types';
 
-const {roundedLayout}=ResuasbleStyles;
+const {roundedLayout} = ResuasbleStyles;
 
 const Dashboard = () => {
   const studentData = useSelector((state: RootState) => state.studentData);
-  const navigation= useNavigation<StackNavigationProp<IStackNavType>>()
+  const attendanceStat = useSelector(
+    (state: RootState) => state.attendanceData.attendanceStat,
+  );
+  const navigation = useNavigation<StackNavigationProp<IStackNavType>>();
+  console.log(attendanceStat);
   return (
     <>
       <DashboardHeader studentData={studentData} />
       <StarBg />
       {/* Tiles */}
-      <View style={{...roundedLayout,...tw`mt-17`, flex: 1}}>
+      <View style={{...roundedLayout, ...tw`mt-17`, flex: 1}}>
         <View style={{...tw`flex-row justify-between px-2 z-2 top-[-20]`}}>
           <TouchableOpacity
-            onPress={()=>navigation.navigate("Attendace")}
+            onPress={() => navigation.navigate('Attendance')}
             style={{
               ...tw`rounded-xl shadow-lg shadow-blue-500 bg-white m-2 py-8 items-center justify-center w-9/20`,
             }}>
             <AttendanceIcon />
             <Text style={{...tw`text-black text-8 font-bold`}}>
-              {studentData?.attendance}%
+              {attendanceStat.percentagePresent.toFixed(2)}%
             </Text>
             <Text style={{...tw` text-black opacity-50`}}>Attendance</Text>
           </TouchableOpacity>
