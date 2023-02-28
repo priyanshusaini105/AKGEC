@@ -1,43 +1,32 @@
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
-import {AttendanceTable, ScreenWithBackButtonView} from '../../components';
-import tw from 'twrnc';
-import {ResuasbleStyles, Theme} from '../../constants';
+import {View} from 'react-native';
+import { ScreenWithBackButtonView} from '../../components';
 import {StarBg} from '../../svg';
-import {RootState} from '../../redux/store';
-import {useSelector} from 'react-redux';
+import Table from './Table';
+import Recent from './Recent';
+import AttendanceTopTabs from '../../navigation/TopTabAttendanceNavigator';
+import { ScreensData } from '../../constants/types';
+import tw from '../../lib/tw';
 
-const {roundedLayout} = ResuasbleStyles;
-const {colors} = Theme;
+
+const screens:Array<ScreensData>=[
+  {
+    name:"Recent",
+    component:Recent
+  },
+  {
+    name:"Table",
+    component:Table
+  },
+]
 
 const Attendance = () => {
-  const {attendance: attendanceData} = useSelector(
-    (state: RootState) => state.attendanceData,
-  );
-
-  const subjectList: Array<string> = [
-    'BAS-104',
-    'BAS-05',
-    'BAS-5',
-    'BAS-1',
-    'BAS-50',
-  ];
 
   return (
     <ScreenWithBackButtonView>
-      <View>
-        <TouchableOpacity
-          style={tw`self-center bg-[${colors.tertiary}] rounded-2xl my-7 p-1`}>
-          <Text style={tw`text-[${colors.primary}]`}>Calender</Text>
-        </TouchableOpacity>
+      <View style={tw`mt-10`}>
         <StarBg />
-        <View style={[roundedLayout, tw`h-198`]}>
-          <Text>Attendance</Text>
-          
-          {/* table */}
-          <AttendanceTable
-            attendanceData={attendanceData}
-            subjectList={subjectList}
-          />
+        <View style={tw`h-198 pt-6 roundedLayout`}>
+          <AttendanceTopTabs screens={screens}/>
         </View>
       </View>
     </ScreenWithBackButtonView>

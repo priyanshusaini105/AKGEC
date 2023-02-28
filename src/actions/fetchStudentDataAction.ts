@@ -9,7 +9,6 @@ function fetchStudentData(dispatch: AppDispatch, sid: string) {
     .ref(`/enrollement/${sid}`)
     .once('value', snapshot => {
       const data = snapshot.val();
-      console.log(data);
       const year = Math.ceil(data.semester / 2) as 1 | 2 | 3 | 4 | null;
       dispatch(
         setData({

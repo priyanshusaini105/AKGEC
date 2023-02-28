@@ -5,4 +5,5 @@ import KeyboardHide from './KeyboardHide';
 import ScreenWithBackButtonView from './ScreenWithBackButtonView';
 import DashboardItemTiles from './DashboardItemTiles';
 import AttendanceTable from './AttendanceTable';
-export {Layout,TextInput,IButton,KeyboardHide,ScreenWithBackButtonView,DashboardItemTiles,AttendanceTable}
+import TabBarAttendance from './TabBarAttendance';
+export {Layout,TextInput,IButton,KeyboardHide,ScreenWithBackButtonView,DashboardItemTiles,AttendanceTable,TabBarAttendance}

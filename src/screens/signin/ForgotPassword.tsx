@@ -13,7 +13,7 @@ import {useForm} from 'react-hook-form';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
-import {IStackNavType} from '../../navigation/types';
+import {TStackNavType} from '../../navigation/types';
 import { ResuasbleStyles } from '../../constants';
 
 const EMAIL_REGEX: RegExp =
@@ -27,7 +27,7 @@ const ForgotPassword = () => {
   // activity indicator loading state
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const {navigate} = useNavigation<StackNavigationProp<IStackNavType>>();
+  const {navigate} = useNavigation<StackNavigationProp<TStackNavType>>();
 
   // setting react form hook>>==================>>
 

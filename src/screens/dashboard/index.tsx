@@ -9,7 +9,7 @@ import {RootState} from '../../redux/store/index';
 import DashboardHeader from './DashboardHeader';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {IStackNavType} from '../../navigation/types';
+import {TStackNavType} from '../../navigation/types';
 
 const {roundedLayout} = ResuasbleStyles;
 
@@ -18,8 +18,7 @@ const Dashboard = () => {
   const attendanceStat = useSelector(
     (state: RootState) => state.attendanceData.attendanceStat,
   );
-  const navigation = useNavigation<StackNavigationProp<IStackNavType>>();
-  console.log(attendanceStat);
+  const navigation = useNavigation<StackNavigationProp<TStackNavType>>();
   return (
     <>
       <DashboardHeader studentData={studentData} />
@@ -33,7 +32,14 @@ const Dashboard = () => {
               ...tw`rounded-xl shadow-lg shadow-blue-500 bg-white m-2 py-8 items-center justify-center w-9/20`,
             }}>
             <AttendanceIcon />
-            <Text style={{...tw`text-black text-8 font-bold`}}>
+            <Text
+              style={{
+                ...tw`text-${
+                  attendanceStat.percentagePresent >= 75
+                    ? 'green-400'
+                    : 'red-400'
+                } text-8 font-bold`,
+              }}>
               {attendanceStat.percentagePresent.toFixed(2)}%
             </Text>
             <Text style={{...tw` text-black opacity-50`}}>Attendance</Text>
@@ -44,11 +50,9 @@ const Dashboard = () => {
             }}>
             <FeeIcon />
             <Text
-              style={{
-                ...tw`text-${
-                  studentData?.feeDue === 0 ? 'green-400' : 'red-400'
-                } text-7 font-bold text-center`,
-              }}>
+              style={tw`text-${
+                studentData?.feeDue === 0 ? 'green-400' : 'red-400'
+              } text-7 font-bold text-center`}>
               {studentData?.feeDue === 0
                 ? 'No Fee Due'
                 : '₹' + studentData?.feeDue}

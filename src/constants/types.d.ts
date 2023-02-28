@@ -48,3 +48,10 @@ export interface IAttendanceDataObj  {
   attendanceStat:IAttendanceStat;
   attendance:IAttendanceData
 }
+
+type TabScreenName="Recent"|"Table"
+
+export interface ScreensData{
+  name:TabScreenName;
+  component:()=>JSX.Element;
+}

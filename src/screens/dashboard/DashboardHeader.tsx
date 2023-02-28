@@ -1,11 +1,10 @@
-import tw from 'twrnc';
 import { Text, View, TouchableOpacity } from 'react-native';
 import {Theme} from '../../constants';
 import {IStudentDataType} from '../../constants/types';
-import {useEffect} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { IStackNavType } from '../../navigation/types';
+import { TStackNavType } from '../../navigation/types';
+import tw from '../../lib/tw';
 const {colors} = Theme;
 
 
@@ -17,7 +16,7 @@ export default function DashboardHeader({
 }) {
 
 
-const navigation=useNavigation<StackNavigationProp<IStackNavType>>();
+const navigation=useNavigation<StackNavigationProp<TStackNavType>>();
 
   const suffix: string[] = [
     'st',
@@ -37,7 +36,7 @@ const navigation=useNavigation<StackNavigationProp<IStackNavType>>();
     <View style={{...tw`flex-row justify-between p-4 pt-10 items-center`}}>
       {/* Header */}
       <View>
-        <Text style={{...tw`text-6`}}>Hi, {studentData.studentInfo.name}</Text>
+        <Text style={{...tw`text-6 font-nunito`,}}>Hi, {studentData.studentInfo.name}</Text>
         <Text style={{...tw`opacity-50 text-4`}}>
           Btech {addSuffix(studentData?.studentInfo.year)} Year |{' '}
           {addSuffix(studentData?.studentInfo.sem)} sem

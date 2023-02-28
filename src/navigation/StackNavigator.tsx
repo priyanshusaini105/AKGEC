@@ -1,15 +1,16 @@
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import {Dashboard, SignIn, SplashScreen, ForgotPassword,Profile, Attendace} from '../screens';
+import {Dashboard, SignIn, SplashScreen, ForgotPassword,Profile, Attendance} from '../screens';
 import {useEffect} from 'react';
-import type {IStackNavType} from './types';
+import type {TStackNavType} from './types';
 import {Alert, Easing} from 'react-native';
 import {TransitionSpec} from '@react-navigation/stack/lib/typescript/src/types';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
 import unsubscriber from '../actions/authActions';
 import NetInfo from '@react-native-community/netinfo';
+import UnderConstruction from './../screens/UnderConstruction';
 
-const Stack = createStackNavigator<IStackNavType>();
+const Stack = createStackNavigator<TStackNavType>();
 
 // screen translations animation
 const config: TransitionSpec = {
@@ -66,7 +67,8 @@ const StackNavigator = () => {
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="Profile" component={Profile}/>
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-      <Stack.Screen name="Attendance" component={Attendace} />
+      <Stack.Screen name="Attendance" component={Attendance} />
+      <Stack.Screen name="UnderConstruction" component={UnderConstruction} />
     </Stack.Navigator>
   );
 };

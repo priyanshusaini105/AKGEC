@@ -1,13 +1,14 @@
-import {View, TouchableOpacity} from 'react-native';
+import { View, TouchableOpacity, StyleProp } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import tw from 'twrnc';
 import Svg, {Path} from 'react-native-svg';
+import { ViewStyle } from 'react-native/types';
 
-const ScreenWithBackButtonView = ({children}: {children: JSX.Element}) => {
+const ScreenWithBackButtonView = ({children,style}: {children: JSX.Element,style?:StyleProp<ViewStyle>}) => {
   const navigation = useNavigation();
   return (
-    <View>
+    <View style={style}>
       <TouchableOpacity
         style={tw`self-start m-5 absolute z-5`}
         onPress={() => navigation.goBack()}>

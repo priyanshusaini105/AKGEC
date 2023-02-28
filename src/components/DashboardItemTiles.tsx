@@ -5,13 +5,13 @@ import tw from 'twrnc';
 import { Theme } from '../constants';
 import { IDashboardItem } from '../constants/types';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { IStackNavType } from '../navigation/types';
+import { TStackNavType } from '../navigation/types';
 import auth from '@react-native-firebase/auth';
 
 const {colors}=Theme; 
 
 const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
-    const navigation = useNavigation<StackNavigationProp<IStackNavType>>();
+    const navigation = useNavigation<StackNavigationProp<TStackNavType>>();
     
   
     return (
@@ -24,7 +24,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
             auth()
               .signOut()
               .then(() => navigation.replace('SignIn'));
-          else navigation.navigate(item.target);
+          else navigation.navigate("UnderConstruction");
         }}>
         {item.icon}
         <Text style={{...tw`text-5 text-black text-center`}}>{item.name}</Text>

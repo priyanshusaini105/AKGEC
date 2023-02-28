@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import tw from 'twrnc';
+import tw from '../lib/tw';
 
 const attendanceColor = {
   A: 'text-red-600',
@@ -26,13 +26,13 @@ const AttendanceTable = ({subjectList, attendanceData}: propTypes) => {
   const dates = Object.keys(attendanceData);
 
   return (
-    <View style={tw`flex-row bg-sky-200 rounded-t-3 m-3`}>
+    <View style={tw`flex-row bg-sky-200 rounded-t-3 m-3 shadow-lg shadow-blue-400`}>
       {/* Date column */}
       <View>
-        <Text style={tw`w-25 text-4 p-2 text-center text-black border-b`}>Dates</Text>
+        <Text style={tw`w-27 text-4 p-2 text-center text-black border-b font-nunito-bold`}>Dates</Text>
         {dates.map((date,index) => {
           return (
-            <Text key={date} style={tw`w-25  ${index%2===0?evenBgColor:oddBgColor} text-4 p-2 text-center text-black`}>
+            <Text key={date} style={tw`w-27 ${index%2===0?evenBgColor:oddBgColor} text-4 p-2 text-center text-black font-nunito-semibold`}>
               {date}
             </Text>
           );
@@ -43,14 +43,14 @@ const AttendanceTable = ({subjectList, attendanceData}: propTypes) => {
       <ScrollView horizontal>
         {subjectList.map(subject => (
           <View key={subject} style={tw`flex-col w-25`}>
-            <Text style={tw`w-full text-black border-b text-4 p-2 text-center`}>
+            <Text style={tw`w-full text-black border-b text-4 p-2 text-center font-nunito-semibold`}>
               {subject}
             </Text>
             <ScrollView>
               {dates.map((date,index) => (
                 <Text
                   key={`${date}-${subject}`}
-                  style={tw`w-full text-black ${index%2===0?evenBgColor:oddBgColor}  text-4 p-2 text-center ${
+                  style={tw`w-full text-black font-nunito ${index%2===0?evenBgColor:oddBgColor}  text-4 p-2 text-center ${
                     attendanceColor[attendanceData[date][subject]]
                   }`}>
                   {attendanceData[date][subject] ?? '--'}
