@@ -37,16 +37,16 @@ const navigation=useNavigation<StackNavigationProp<TStackNavType>>();
       {/* Header */}
       <View>
         <Text style={{...tw`text-6 font-nunito`,}}>Hi, {studentData.studentInfo.name}</Text>
-        <Text style={{...tw`opacity-50 text-4`}}>
+        <Text style={{...tw`opacity-50 text-4 font-nunito`}}>
           Btech {addSuffix(studentData?.studentInfo.year)} Year |{' '}
           {addSuffix(studentData?.studentInfo.sem)} sem
         </Text>
-        <Text style={{...tw`opacity-50 text-4`}}>
+        <Text style={{...tw`opacity-50 text-4 font-nunito`}}>
           Student Id: {studentData?.studentInfo.studentId}
         </Text>
         <Text
           style={{
-            ...tw`bg-white rounded-full text-[${colors.secondary}] p-2 py-0 w-20 mt-1 text-4 `,
+            ...tw`bg-white rounded-full text-quaternary font-nunito p-2 py-0 w-20 mt-1 text-4 `,
           }}>
           {studentData?.studentInfo.session}
         </Text>

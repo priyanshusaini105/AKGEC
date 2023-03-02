@@ -1,8 +1,8 @@
 import { View, Text, ViewStyle, TouchableOpacity } from 'react-native';
 import React from 'react'
 import { StyleProp ,TextStyle} from 'react-native/types';
-import { Theme } from '../constants';
-import tw from 'twrnc' 
+import tw from '../lib/tw';
+
 
 type Props = {
     children: string;
@@ -13,8 +13,8 @@ type Props = {
 
 const IButton = ({children,style,onPress}:Props) => {
   return (
-    <TouchableOpacity style={[tw`bg-[${Theme.colors.primary}] p-3 my-8 rounded-xl`,style]} onPress={()=>onPress()}>
-      <Text style={tw`text-center text-lg`}>{children}</Text>
+    <TouchableOpacity style={[tw`bg-primary p-3 my-8 rounded-xl`,style]} onPress={()=>onPress()}>
+      <Text style={tw`text-center font-nunito-bold text-lg`}>{children}</Text>
     </TouchableOpacity>
   )
 }

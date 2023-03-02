@@ -24,7 +24,7 @@ module.exports = {
           solid:"#ffa500",
           light:"#ffa50030"
         },
-        tertiary: '##F5F6FC',
+        tertiary: '#F5F6FC',
         quaternary: '#7292CF',
       },
     },

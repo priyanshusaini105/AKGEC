@@ -1,7 +1,6 @@
 import {View, Text, TouchableOpacity, FlatList} from 'react-native';
-import tw from 'twrnc';
 import {AttendanceIcon, FeeIcon, StarBg} from '../../svg';
-import {Theme, dashboardItems, ResuasbleStyles} from '../../constants';
+import { dashboardItems, ResuasbleStyles} from '../../constants';
 import {DashboardItemTiles} from '../../components';
 import React from 'react';
 import {useSelector} from 'react-redux';
@@ -10,6 +9,7 @@ import DashboardHeader from './DashboardHeader';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {TStackNavType} from '../../navigation/types';
+import tw from '../../lib/tw';
 
 const {roundedLayout} = ResuasbleStyles;
 
@@ -38,11 +38,11 @@ const Dashboard = () => {
                   attendanceStat.percentagePresent >= 75
                     ? 'green-400'
                     : 'red-400'
-                } text-8 font-bold`,
+                } text-8 font-nunito-bold`,
               }}>
-              {attendanceStat.percentagePresent.toFixed(2)}%
+              {+attendanceStat.percentagePresent.toFixed(2)??0}%
             </Text>
-            <Text style={{...tw` text-black opacity-50`}}>Attendance</Text>
+            <Text style={{...tw` text-black opacity-50 font-nunito`}}>Attendance</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -52,10 +52,10 @@ const Dashboard = () => {
             <Text
               style={tw`text-${
                 studentData?.feeDue === 0 ? 'green-400' : 'red-400'
-              } text-7 font-bold text-center`}>
+              } text-7 text-center font-nunito-bold`}>
               {studentData?.feeDue === 0
                 ? 'No Fee Due'
-                : '₹' + studentData?.feeDue}
+                : '₹' + (studentData?.feeDue??0)}
             </Text>
             <Text style={{...tw` text-black opacity-50`}}>Fees Due</Text>
           </TouchableOpacity>

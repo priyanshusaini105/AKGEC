@@ -1,14 +1,12 @@
 
 import { useNavigation } from '@react-navigation/native';
 import { Text, TouchableOpacity } from 'react-native';
-import tw from 'twrnc';
-import { Theme } from '../constants';
 import { IDashboardItem } from '../constants/types';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { TStackNavType } from '../navigation/types';
 import auth from '@react-native-firebase/auth';
+import tw from '../lib/tw';
 
-const {colors}=Theme; 
 
 const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
     const navigation = useNavigation<StackNavigationProp<TStackNavType>>();
@@ -17,7 +15,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
     return (
       <TouchableOpacity
         style={{
-          ...tw`bg-[${colors.tertiary}] shadow-[${colors.primary}] m-2 rounded-3 py-6 items-center justify-center shadow-md w-37`,
+          ...tw`bg-tertiary shadow-primary m-2 rounded-3 py-6 items-center justify-center shadow-md w-37`,
         }}
         onPress={() => {
           if (item.target == 'logout')
@@ -27,7 +25,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
           else navigation.navigate("UnderConstruction");
         }}>
         {item.icon}
-        <Text style={{...tw`text-5 text-black text-center`}}>{item.name}</Text>
+        <Text style={{...tw`text-5 text-black text-center font-nunito`}}>{item.name}</Text>
       </TouchableOpacity>
     );
   };

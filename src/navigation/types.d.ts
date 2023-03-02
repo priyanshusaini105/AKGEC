@@ -8,6 +8,7 @@ export type TStackNavType={
     Profile:undefined;
     Attendance:undefined
     UnderConstruction:undefined;
+    SplashScreen:undefined;
 };
 export type TopTabParamList = {
     Recent: undefined;

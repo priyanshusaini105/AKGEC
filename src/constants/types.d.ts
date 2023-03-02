@@ -1,6 +1,6 @@
 export interface IStudentAuthState {
   uid: string | null;
-  sid: number | null;
+  sid: string | null;
   email: string | null;
   status?: TAUthStatus;
   isAuth: boolean | null;

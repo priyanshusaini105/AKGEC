@@ -7,7 +7,6 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import React, {useState} from 'react';
-import tw from 'twrnc';
 import {SignInBg} from '../../svg';
 import {IButton, TextInput, KeyboardHide} from '../../components';
 import {useForm} from 'react-hook-form';
@@ -16,9 +15,10 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
 import {TStackNavType} from '../../navigation/types';
 import { ResuasbleStyles } from '../../constants';
+import tw from '../../lib/tw';
 
 const EMAIL_REGEX: RegExp =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)$/;
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)\s*$/;
 const PASS_REGEX = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 const {roundedLayout}=ResuasbleStyles;
@@ -48,7 +48,7 @@ const SignIn = () => {
     const {email, password} = data;
     setIsLoading(true);
     auth()
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email.trim(), password)
       .then(userCredentials => {
         const user = userCredentials.user;
         console.log(user.getIdToken());
@@ -78,11 +78,11 @@ const SignIn = () => {
           <SignInBg style={tw`top-10 ml-5`} />
         </View>
         <View style={[roundedLayout,tw`h-11/15 p-10`]}>
-          <Text style={tw`text-slate-700 text-7 font-bold mt-8`}>
+          <Text style={tw`font-nunito-bold text-slate-700 text-7 mt-8`}>
             Hi, Student
           </Text>
 
-          <Text style={tw`text-slate-400 text-5 mt-2`}>
+          <Text style={tw`font-nunito text-slate-400 text-5 mt-2`}>
             Sign in to continue
           </Text>
           {/* email input*/}
@@ -105,7 +105,7 @@ const SignIn = () => {
             }}
           />
           {errors.email && (
-            <Text style={tw`text-red-400 text-3 ml-1`}>
+            <Text style={tw`font-nunito text-red-400 text-3 ml-1`}>
               *{errors.email.message || 'E-mail is required!'}
             </Text>
           )}
@@ -131,7 +131,7 @@ const SignIn = () => {
             }}
           />
           {errors.password && (
-            <Text style={tw`text-red-400 text-3 ml-1`}>
+            <Text style={tw`font-nunito text-red-400 text-3 ml-1`}>
               *{errors.password.message || 'Password is required.'}
             </Text>
           )}

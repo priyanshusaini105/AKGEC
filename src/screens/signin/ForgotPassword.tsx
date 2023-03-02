@@ -6,7 +6,6 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import React, {useState} from 'react';
-import tw from 'twrnc';
 import {SignInBg} from '../../svg';
 import {IButton, TextInput, KeyboardHide, ScreenWithBackButtonView} from '../../components';
 import {useForm} from 'react-hook-form';
@@ -15,10 +14,11 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
 import {TStackNavType} from '../../navigation/types';
 import { ResuasbleStyles } from '../../constants';
+import tw from '../../lib/tw';
 
 const EMAIL_REGEX: RegExp =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)$/;
-const PASS_REGEX = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(akgec.ac.in)\s*$/;
+
 
 const {roundedLayout}=ResuasbleStyles;
 
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
     const {email} = data;
     setIsLoading(true);
     auth()
-      .sendPasswordResetEmail(email)
+      .sendPasswordResetEmail(email.trim())
       .then(userCredentials => {
         setIsLoading(false);
         Alert.alert(
@@ -81,11 +81,11 @@ const ForgotPassword = () => {
             <SignInBg style={tw`top-10 ml-5`} />
           </View>
           <View style={[roundedLayout,tw`h-11/15 p-10`]}>
-            <Text style={tw`text-slate-700 text-7 font-bold mt-8`}>
+            <Text style={tw`font-nunito-bold text-slate-700 text-7 mt-8`}>
               Forgot Password ?
             </Text>
 
-            <Text style={tw`text-slate-400 text-5 mt-2`}>
+            <Text style={tw`font-nunito text-slate-400 text-5 mt-2`}>
               Don't worry, Enter E-mail
             </Text>
             {/* email input*/}
@@ -108,7 +108,7 @@ const ForgotPassword = () => {
               }}
             />
             {errors.email && (
-              <Text style={tw`text-red-400 text-3 ml-1`}>
+              <Text style={tw`font-nunito text-red-400 text-3 ml-1`}>
                 *{errors.email.message || 'E-mail is required!'}
               </Text>
             )}

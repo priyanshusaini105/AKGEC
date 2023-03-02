@@ -1,8 +1,6 @@
 import {AppDispatch} from '../redux/store/index';
 import database from '@react-native-firebase/database';
 import {setData} from '../redux/slices/studentDataSlice';
-import {getStudentAttendance} from './getStudentAttendance';
-import {IAttendanceData} from '../constants/types';
 
 function fetchStudentData(dispatch: AppDispatch, sid: string) {
   database()
@@ -27,7 +25,6 @@ function fetchStudentData(dispatch: AppDispatch, sid: string) {
           },
         }),
       );
-      getStudentAttendance(dispatch);
     });
 }
 export default fetchStudentData;

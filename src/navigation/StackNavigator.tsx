@@ -1,14 +1,22 @@
 import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import {Dashboard, SignIn, SplashScreen, ForgotPassword,Profile, Attendance} from '../screens';
-import {useEffect} from 'react';
+import {
+  Dashboard,
+  SignIn,
+  SplashScreen,
+  ForgotPassword,
+  Profile,
+  Attendance,
+} from '../screens';
+import {useState, useEffect, useMemo} from 'react';
 import type {TStackNavType} from './types';
 import {Alert, Easing} from 'react-native';
 import {TransitionSpec} from '@react-navigation/stack/lib/typescript/src/types';
-import {useDispatch, useSelector} from 'react-redux';
+import { useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
 import unsubscriber from '../actions/authActions';
-import NetInfo from '@react-native-community/netinfo';
+import {useNetInfo} from '@react-native-community/netinfo';
 import UnderConstruction from './../screens/UnderConstruction';
+import {store} from '../redux/store/index';
 
 const Stack = createStackNavigator<TStackNavType>();
 
@@ -33,44 +41,64 @@ const closeConfig: TransitionSpec = {
   },
 };
 
-const unsubscribe = NetInfo.addEventListener(state => {
-  if (!state.isConnected) Alert.alert("Connect To Internet");
-});
-unsubscribe()
+function DisconnectedAlert() {
+  const netInfo = useNetInfo();
+  if ((netInfo.isConnected===false)) Alert.alert('Connect To Internet');
+  return null;
+}
 
 const StackNavigator = () => {
-  const dispatch = useDispatch();
   const authState = useSelector((state: RootState) => state.auth);
+  const [isReady, setIsReady] = useState<boolean>(false);
 
-  // Handle user state changes=================>
   useEffect(() => {
-    return unsubscriber(dispatch); // unsubscribe on unmount
+    const initializeApp = async () => {
+      await Promise.all([unsubscriber(store.dispatch)]);
+    };
+    initializeApp();
+    const timeout = setTimeout(() => {
+      setIsReady(true);
+    }, 1500);
+
+    return () => clearTimeout(timeout);
   }, []);
-  return authState.isAuth === null || authState.status === 'loading' ? (
-    <SplashScreen />
-  ) : (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        // gestureEnabled: true,
-        ...TransitionPresets.SlideFromRightIOS,
-        gestureDirection: 'horizontal',
-        transitionSpec: {
-          open: config,
-          close: closeConfig,
-        },
-        headerMode: 'float',
-      }}
-      // animation='fade'
-      initialRouteName={authState.isAuth ? 'Dashboard' : 'SignIn'}>
-      <Stack.Screen name="SignIn" component={SignIn} />
-      <Stack.Screen name="Dashboard" component={Dashboard} />
-      <Stack.Screen name="Profile" component={Profile}/>
-      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
-      <Stack.Screen name="Attendance" component={Attendance} />
-      <Stack.Screen name="UnderConstruction" component={UnderConstruction} />
-    </Stack.Navigator>
+
+  const stackNavigator = useMemo(
+    () => (
+      <>
+        <DisconnectedAlert />
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+            // gestureEnabled: true,
+            ...TransitionPresets.SlideFromRightIOS,
+            gestureDirection: 'horizontal',
+            transitionSpec: {
+              open: config,
+              close: closeConfig,
+            },
+            headerMode: 'float',
+          }}
+          // animation='fade'
+          initialRouteName={authState.isAuth ? 'Dashboard' : 'SignIn'}>
+          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+          <Stack.Screen name="Attendance" component={Attendance} />
+          <Stack.Screen
+            name="UnderConstruction"
+            component={UnderConstruction}
+          />
+        </Stack.Navigator>
+      </>
+    ),
+    [authState.isAuth],
   );
+
+  if (!isReady || authState.status === 'loading' || authState.isAuth === null)
+    return <SplashScreen />;
+  else return stackNavigator;
 };
 
 export default StackNavigator;

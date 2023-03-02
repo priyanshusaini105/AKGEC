@@ -1,9 +1,9 @@
 import { Text, TextInput as RNTextInput, View, TouchableOpacity } from 'react-native';
-import tw from 'twrnc';
 import {Controller} from 'react-hook-form';
 import type {ITextInputProps} from './types';
 import { EyeIcon } from '../svg/Icons';
 import { useState } from 'react';
+import tw from '../lib/tw';
 
 const TextInput = ({
   style,
@@ -23,14 +23,14 @@ const TextInput = ({
       name={name}
       render={({field: {onChange, onBlur, value}}) => (
         <>
-          <Text style={{...tw`text-slate-400 text-3 mt-10`}}>{label}</Text>
-          <View style={tw`border-b border-slate-200 flex-row justify-between`}>
+          <Text style={{...tw`text-slate-400 text-3 mt-10 `}}>{label}</Text>
+          <View style={tw`border-b border-slate-200 flex-row justify-between font-nunito`}>
             <RNTextInput
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
               clearButtonMode="while-editing"
-              style={[tw`text-slate-700 p-1 w-9/10`, style]}
+              style={[tw`text-slate-700 p-1 w-9/10 font-nunito-semibold`, style]}
               {...props}
               secureTextEntry={!openEye}
             />
