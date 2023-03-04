@@ -15,14 +15,14 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
     return (
       <TouchableOpacity
         style={{
-          ...tw`bg-tertiary shadow-primary m-2 rounded-3 py-6 items-center justify-center shadow-md w-37`,
+          ...tw`bg-quinary shadow-primary m-2 rounded-3 py-6 items-center justify-center shadow-md w-37`,
         }}
         onPress={() => {
           if (item.target == 'logout')
             auth()
               .signOut()
               .then(() => navigation.replace('SignIn'));
-          else navigation.navigate("UnderConstruction");
+          else navigation.navigate("Classroom");
         }}>
         {item.icon}
         <Text style={{...tw`text-5 text-black text-center font-nunito`}}>{item.name}</Text>

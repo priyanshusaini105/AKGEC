@@ -9,6 +9,7 @@ export type TStackNavType={
     Attendance:undefined
     UnderConstruction:undefined;
     SplashScreen:undefined;
+    Classroom:undefined;
 };
 export type TopTabParamList = {
     Recent: undefined;

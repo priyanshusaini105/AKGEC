@@ -1,5 +1,5 @@
 import { IDashboardItem } from "./types";
-import { AssignmentIcon,TimeTableIcon,DateSheetIcon, ChangePasswordIcon ,EventsIcon, LogoutIcon, DocumentsIcon, NoticeIcon, HostelIcon, HolidayIcon, ResultIcon, GroupChatIcon} from '../svg'
+import { AssignmentIcon,TimeTableIcon,DateSheetIcon, ChangePasswordIcon ,EventsIcon, LogoutIcon, DocumentsIcon, NoticeIcon, HostelIcon, HolidayIcon, ResultIcon, GroupChatIcon, ClassroomIcon} from '../svg'
 
 export const dashboardItems:Array<IDashboardItem> = [
     {
@@ -15,13 +15,19 @@ export const dashboardItems:Array<IDashboardItem> = [
         icon: <NoticeIcon/>
     },
     {
-        id: '78',
+        id: '10',
+        name: "Classroom",
+        target: "Classroom",
+        icon: <ClassroomIcon/>
+    },
+    {
+        id: '9',
         name: "Assignemt",
         target: "Assignment",
         icon: <AssignmentIcon/>
     },
     {
-        id: '783',
+        id: '10',
         name: "Holidays",
         target: "Holiday",
         icon: <HolidayIcon/>

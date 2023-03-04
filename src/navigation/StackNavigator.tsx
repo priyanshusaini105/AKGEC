@@ -6,6 +6,7 @@ import {
   ForgotPassword,
   Profile,
   Attendance,
+  Classroom,
 } from '../screens';
 import {useState, useEffect, useMemo} from 'react';
 import type {TStackNavType} from './types';
@@ -86,6 +87,7 @@ const StackNavigator = () => {
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
           <Stack.Screen name="Attendance" component={Attendance} />
+          <Stack.Screen name="Classroom" component={Classroom} />
           <Stack.Screen
             name="UnderConstruction"
             component={UnderConstruction}

@@ -19,20 +19,19 @@ const Recent = () => {
   );
   const lastDate = Object.keys(attendanceData)[0];
   const lastDayAttendance = attendanceData[lastDate];
-  console.log(lastDayAttendance);
   return (
     <View style={tw`bg-white flex-1`}>
       <View style={tw`justify-center items-center p-2 `}>
         <Text
           style={tw`text-black text-4 text-left m-1 font-nunito min-w-45`}>
-          Total Present: {attendanceStat.percentagePresent}%
+          Total Present: {attendanceStat.percentagePresent.toFixed(2)}%
         </Text>
         <Text
-          style={tw`text-black text-4 text-start m-1 font-nunito min-w-45`}>
+          style={tw`text-black text-4 m-1 font-nunito min-w-45`}>
           Total Present: {attendanceStat.totalPresent}
         </Text>
         <Text
-          style={tw`text-black text-4 text-start m-1 font-nunito min-w-45`}>
+          style={tw`text-black text-4 m-1 font-nunito min-w-45`}>
           Total Present: {attendanceStat.totalAttendances}
         </Text>
       </View>
@@ -43,11 +42,11 @@ const Recent = () => {
           return (
             <View style={tw`flex-row justify-between items-center p-2 m-2`} key={index}>
               <Text
-                style={tw`text-black text-4 text-start m-1 font-nunito min-w-45 `}>
+                style={tw`text-black text-4 m-1 font-nunito min-w-45 `}>
                 {subject}
               </Text>
               <Text
-                style={tw`text-black text-4 text-start m-1 font-nunito min-w-45 ${
+                style={tw`text-black text-4 m-1 font-nunito min-w-45 ${
                   attendanceColor[lastDayAttendance[subject]]
                 }`}>
                 {lastDayAttendance[subject]}

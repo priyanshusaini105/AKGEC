@@ -1,8 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {
-  IAttendanceDataObj,
-  IAttendanceData,
-} from '../../../constants/types';
+import {IAttendanceDataObj, IAttendanceData} from '../../../constants/types';
 
 const initialState: IAttendanceDataObj = {
   attendance: {},
@@ -16,15 +13,30 @@ export const attendanceSlice = createSlice({
     getAttendanceData: (state, action: PayloadAction<IAttendanceData>) => {
       state.attendance = sortAttendanceByDate(action.payload);
       state.attendanceStat = calculateAttendance(state.attendance);
-    }
+    },
   },
 });
 export const {getAttendanceData} = attendanceSlice.actions;
 export default attendanceSlice.reducer;
 
 // sorting data according to date
+// function sortAttendanceByDate(data: IAttendanceData): IAttendanceData {
+//   return Object.fromEntries(
+//     Object.entries(data).sort(
+//       ([dateA], [dateB]) =>
+//         new Date(dateB.split('-').reverse().join('-')).getTime() -
+//         new Date(dateA.split('-').reverse().join('-')).getTime(),
+//     ),
+//   );
+// }
+
+// sorting data according to date
 function sortAttendanceByDate(data: IAttendanceData): IAttendanceData {
-  const sortedDates = Object.keys(data).sort().reverse();
+  const sortedDates = Object.keys(data).sort((a, b) => {
+    const dateA = new Date(a.split('-').reverse().join('-'));
+    const dateB = new Date(b.split('-').reverse().join('-'));
+    return dateB.getTime() - dateA.getTime();
+  });
   const sortedData: IAttendanceData = {};
   sortedDates.forEach(date => {
     sortedData[date] = data[date];

@@ -21,11 +21,15 @@ module.exports = {
       colors: {
         primary: '#2855AE',
         secondary: {
-          solid:"#ffa500",
-          light:"#ffa50030"
+          solid: '#ffa500',
+          light: '#ffa50030',
         },
-        tertiary: '#F5F6FC',
+        tertiary: {
+          solid: '#DD50F2',
+          light: '#DD50F230',
+        },
         quaternary: '#7292CF',
+        quinary: '#F5F6FC',
       },
     },
   },
