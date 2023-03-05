@@ -15,7 +15,7 @@ const Profile = (props: Props) => {
   console.log(profileData);
   return (
     <ScreenWithBackButtonView label='My Profile'>
-      <View>
+      <>
         <StarBg />
         <View style={tw`roundedLayout pb-10`}>
           <View style={tw`border `}>
@@ -78,7 +78,7 @@ const Profile = (props: Props) => {
             <Text style={tw`text-black font-nunito mr-18 mt-4`}>zsxfchbjn</Text>
           </View>
         </View>
-      </View>
+      </>
     </ScreenWithBackButtonView>
   );
 };

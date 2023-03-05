@@ -27,7 +27,7 @@ const Assignments = ({navigation}:{navigation:StackNavigationProp<TStackNavType>
         <StarBg />
         <View style={tw`roundedLayout -top-2 py-4 h-full`}>
           <ScrollView scrollEnabled >
-            {subjectList.map((subject, index) => (
+            {subjectList.map(subject => (
               <View key={subject.code} style={tw`flex-row justify-between items-start px-4 py-2 m-2 mx-4 border bg-white border-gray-200 rounded-xl`}>
                 <View style={tw`items-start justify-start`}>
                   <Text style={tw`text-3 font-nunito-semibold text-blue-500 bg-blue-50 rounded-2 p-1 px-2 self-start`}>{subject.code}</Text>
@@ -43,7 +43,7 @@ const Assignments = ({navigation}:{navigation:StackNavigationProp<TStackNavType>
               </View>
             ))}
           </ScrollView>
-
+              <View style={tw`h-56`}/>
         </View>
       </>
     </ScreenWithBackButtonView>

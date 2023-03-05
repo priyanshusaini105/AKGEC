@@ -1,10 +1,10 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { TabBarAttendance } from '../components';
 import { ScreensData } from '../constants/types';
-import { TopTabParamList } from './types';
+import { TopTabAttendanceParamList } from './types';
 
 
-const Tab = createMaterialTopTabNavigator<TopTabParamList>();
+const Tab = createMaterialTopTabNavigator<TopTabAttendanceParamList>();
 
 
 export default function AttendanceTopTabs({screens}:{screens:Array<ScreensData>}) {

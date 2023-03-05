@@ -23,12 +23,12 @@ const Attendance = () => {
 
   return (
     <ScreenWithBackButtonView label='Attendance'>
-      <View style={tw`mt-10`}>
+      <>
         <StarBg />
         <View style={tw`h-198 pt-6 roundedLayout`}>
           <AttendanceTopTabs screens={screens}/>
         </View>
-      </View>
+      </>
     </ScreenWithBackButtonView>
   );
 };

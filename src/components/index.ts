@@ -6,4 +6,5 @@ import ScreenWithBackButtonView from './ScreenWithBackButtonView';
 import DashboardItemTiles from './DashboardItemTiles';
 import AttendanceTable from './AttendanceTable';
 import TabBarAttendance from './TabBarAttendance';
-export {Layout,TextInput,IButton,KeyboardHide,ScreenWithBackButtonView,DashboardItemTiles,AttendanceTable,TabBarAttendance}
+import TabBarTimeTable from './TabBarTimeTable';
+export {Layout,TextInput,IButton,KeyboardHide,ScreenWithBackButtonView,DashboardItemTiles,AttendanceTable,TabBarAttendance,TabBarTimeTable}

@@ -1,4 +1,4 @@
-import { ISubjectList, IAssignmentDetails } from '../constants/types';
+import { ISubjectList, IAssignmentDetails, ITimeTableData } from '../constants/types';
 
 export type TStackNavType={
     Dashboard:undefined;
@@ -21,9 +21,32 @@ export type TStackNavType={
         assignment:IAssignmentDetails;
     };
 };
-export type TopTabParamList = {
+export type TopTabAttendanceParamList = {
     Recent: undefined;
     Table: undefined;
   };
+export type TopTabTimetableParamList = {
+    Sunday:{
+        timetableItem:ITimeTableData;
+    };
+    Monday:{
+        timetableItem:ITimeTableData;
+    };
+    Tuesday:{
+        timetableItem:ITimeTableData;
+    };
+    Wednesday:{
+        timetableItem:ITimeTableData;
+    };
+    Thursday:{
+        timetableItem:ITimeTableData;
+    };
+    Friday:{
+        timetableItem:ITimeTableData;
+    };
+    Saturday:{
+        timetableItem:ITimeTableData;
+    };
+}
 
  

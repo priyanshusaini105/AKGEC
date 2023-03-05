@@ -109,6 +109,7 @@ const AssignmentScreen = ({ route,navigation }: Props) => {
               </View>
             </View>
           ))}
+        <View style={tw`h-35`}/>
         </ScrollView>
       </>
     </ScreenWithBackButtonView>

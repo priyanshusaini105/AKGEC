@@ -76,9 +76,27 @@ interface ISubjectAssignments extends ISubjectList {
   assignments: IAssignmentDetails[];
 }
 export interface IDocumentDetail {
-  name: string|null;
-  uri: string|null;
-  size: number|null;
-  type: string|null;
-  uploaded:boolean;
+  name: string | null;
+  uri: string | null;
+  size: number | null;
+  type: string | null;
+  uploaded: boolean;
+}
+export interface ITimeTablePeriod {
+  time: string;
+  subject: string;
+  teacher:string;
+  periodNo:number;
+}
+
+export type Tdays =
+  'Monday'
+  | 'Tuesday'
+  | 'Wednesday'
+  | 'Thursday'
+  | 'Friday'
+  | 'Saturday';
+export interface ITimeTableData {
+  list: ITimeTablePeriod[];
+  day:Tdays;
 }

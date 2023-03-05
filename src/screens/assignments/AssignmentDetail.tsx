@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useState } from 'react';
 import { IAssignmentDetails, IDocumentDetail } from '../../constants/types';
 import ScreenWithBackButtonView from '../../components/ScreenWithBackButtonView';
@@ -85,13 +85,15 @@ const AssignmentDetail = ({ route }: Props) => {
       <>
         <StarBg />
         <View style={tw`relative z-10 roundedLayout p-6 h-full `}>
-          <View style={tw`border-b-2 border-gray-200`}>
+          <View style={tw`border-b-2 border-gray-200 h-110`}>
             <Text style={tw`text-black text-2xl font-nunito-bold my-2`}>{assignment.name}</Text>
-            <Text style={tw`text-gray-700 my-2 text-4 font-nunito-semibold`}>{assignment.description}</Text>
-            <Text style={tw`text-gray-600 mb-2 font-nunito`}>Due Date: {assignment.dueDate}</Text>
-            <Text style={tw`text-gray-600 mb-2 text-[3.7] font-nunito`}>Obtained Points: {assignment.points.obtained}</Text>
-            <Text style={tw`text-gray-600 mb-2 text-[3.7] font-nunito`}>Total Points: {assignment.points.total}</Text>
-            <Text style={tw`text-gray-600 mb-2 font-nunito`}>Instructions: {'\n'} {assignment.instructions}</Text>
+            <ScrollView>
+              <Text style={tw`text-gray-700 my-2 text-4 font-nunito-semibold`}>{assignment.description}</Text>
+              <Text style={tw`text-gray-600 mb-2 font-nunito`}>Due Date: {assignment.dueDate}</Text>
+              <Text style={tw`text-gray-600 mb-2 text-[3.7] font-nunito`}>Obtained Points: {assignment.points.obtained}</Text>
+              <Text style={tw`text-gray-600 mb-2 text-[3.7] font-nunito`}>Total Points: {assignment.points.total}</Text>
+              <Text style={tw`text-gray-600 mb-2 font-nunito`}>Instructions: {'\n'} {assignment.instructions}</Text>
+            </ScrollView>
           </View>
           <View style={tw`justify-center items-center mt-5`}>
             {renderSubmitButton()}

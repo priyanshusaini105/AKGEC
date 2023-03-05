@@ -11,4 +11,5 @@ import Assignments from './assignments';
 import AssignmentScreen from './assignments/AssignmentScreen';
 import AssignmentDetail from './assignments/AssignmentDetail';
 import Timetable from './timetable/index';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable}
+import TimeTableScreen from './timetable/TimeTableScreen';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen}

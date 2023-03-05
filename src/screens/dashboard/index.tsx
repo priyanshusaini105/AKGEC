@@ -24,7 +24,7 @@ const Dashboard = () => {
       <DashboardHeader studentData={studentData} />
       <StarBg />
       {/* Tiles */}
-      <View style={{...roundedLayout, ...tw`mt-17`, flex: 1}}>
+      <View style={[tw`mt-17 roundedLayout`,{flex:1}]}>
         <View style={{...tw`flex-row justify-between px-2 z-2 top-[-20]`}}>
           <TouchableOpacity
             onPress={() => navigation.navigate('Attendance')}
