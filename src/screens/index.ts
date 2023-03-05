@@ -6,4 +6,5 @@ import Profile from './profile/index';
 import Attendance from './attendance';
 import UnderConstruction from './UnderConstruction';
 import Classroom from './classroom';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom}
+import ChangePassword from './signin/ChangePassword';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword}

@@ -92,6 +92,7 @@ const ForgotPassword = () => {
             <TextInput
               style={tw`border-${errors.email ? 'red' : 'slate'}-400`}
               placeholder="E-mail"
+              labelStyle={tw`mt-10`}
               label="College E-mail"
               name="email"
               autoComplete="email"

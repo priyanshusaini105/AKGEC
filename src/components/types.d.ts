@@ -15,6 +15,7 @@ export interface ITextInputProps extends TextInputProps {
         value: RegExp;
         message: string;
       };
+      validate?: (val) => string | void;
     };
     name: string;
   }

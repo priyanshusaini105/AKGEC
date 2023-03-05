@@ -6,6 +6,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { TStackNavType } from '../navigation/types';
 import auth from '@react-native-firebase/auth';
 import tw from '../lib/tw';
+import React from 'react';
 
 
 const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
@@ -22,7 +23,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
             auth()
               .signOut()
               .then(() => navigation.replace('SignIn'));
-          else navigation.navigate("Classroom");
+          else navigation.navigate("ChangePassword");
         }}>
         {item.icon}
         <Text style={{...tw`text-5 text-black text-center font-nunito`}}>{item.name}</Text>

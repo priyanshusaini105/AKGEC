@@ -23,7 +23,7 @@ const TextInput = ({
       name={name}
       render={({field: {onChange, onBlur, value}}) => (
         <>
-          <Text style={{...tw`text-slate-400 text-3 mt-10 `}}>{label}</Text>
+          <Text style={[tw`text-slate-400 text-3`,labelStyle]}>{label}</Text>
           <View style={tw`border-b border-slate-200 flex-row justify-between font-nunito`}>
             <RNTextInput
               onBlur={onBlur}
@@ -34,7 +34,7 @@ const TextInput = ({
               {...props}
               secureTextEntry={!openEye}
             />
-            {name==="password" &&<TouchableOpacity onPress={()=>setOpenEye(!openEye)}><EyeIcon openEye={openEye}/></TouchableOpacity>}
+            {name.toLowerCase().includes("password") &&<TouchableOpacity onPress={()=>setOpenEye(!openEye)}><EyeIcon openEye={openEye}/></TouchableOpacity>}
           </View>
         </>
       )}

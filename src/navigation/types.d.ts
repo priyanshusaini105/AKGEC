@@ -10,6 +10,7 @@ export type TStackNavType={
     UnderConstruction:undefined;
     SplashScreen:undefined;
     Classroom:undefined;
+    ChangePassword:undefined;
 };
 export type TopTabParamList = {
     Recent: undefined;
