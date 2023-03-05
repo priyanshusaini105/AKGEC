@@ -18,7 +18,7 @@ const Classroom = () => {
   }, []);
 
   return (
-    <ScreenWithBackButtonView>
+    <ScreenWithBackButtonView label='Classroom'>
       <View>
       <YoutubePlayer
         height={300}

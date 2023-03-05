@@ -37,21 +37,48 @@ export interface IAttendanceData {
   };
 }
 
-
 export interface IAttendanceStat {
-    totalAttendances: number;
-    totalPresent: number;
-    percentagePresent: number;
+  totalAttendances: number;
+  totalPresent: number;
+  percentagePresent: number;
 }
 
-export interface IAttendanceDataObj  {
-  attendanceStat:IAttendanceStat;
-  attendance:IAttendanceData
+export interface IAttendanceDataObj {
+  attendanceStat: IAttendanceStat;
+  attendance: IAttendanceData;
 }
 
-type TabScreenName="Recent"|"Table"
+type TabScreenName = 'Recent' | 'Table';
 
-export interface ScreensData{
-  name:TabScreenName;
-  component:()=>JSX.Element;
+export interface ScreensData {
+  name: TabScreenName;
+  component: () => JSX.Element;
+}
+export interface ISubjectList {
+  name: string;
+  code: string;
+}
+export interface IAssignment {
+  id: number;
+  name: string;
+  dueDate: string;
+  isSubmitted: boolean;
+}
+export interface IAssignmentDetails extends IAssignment {
+  description: string;
+  points: {
+    total: number;
+    obtained: number;
+  };
+  instructions: string;
+}
+interface ISubjectAssignments extends ISubjectList {
+  assignments: IAssignmentDetails[];
+}
+export interface IDocumentDetail {
+  name: string|null;
+  uri: string|null;
+  size: number|null;
+  type: string|null;
+  uploaded:boolean;
 }

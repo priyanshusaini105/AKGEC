@@ -8,6 +8,10 @@ import {
   Attendance,
   Classroom,
   ChangePassword,
+  Assignments,
+  AssignmentScreen,
+  AssignmentDetail,
+  Timetable,
 } from '../screens';
 import {useState, useEffect, useMemo} from 'react';
 import type {TStackNavType} from './types';
@@ -45,7 +49,7 @@ const closeConfig: TransitionSpec = {
 
 function DisconnectedAlert() {
   const netInfo = useNetInfo();
-  if ((netInfo.isConnected===false)) Alert.alert('Connect To Internet');
+  if ((netInfo.isConnected===false)) Alert.alert('Unable to Connect To Internet');
   return null;
 }
 
@@ -94,6 +98,10 @@ const StackNavigator = () => {
             component={UnderConstruction}
           />
           <Stack.Screen name="ChangePassword" component={ChangePassword} />
+          <Stack.Screen name="Assignments" component={Assignments} />
+          <Stack.Screen name="AssignmentScreen" component={AssignmentScreen} />
+          <Stack.Screen name="AssignmentDetail" component={AssignmentDetail} />
+          <Stack.Screen name="Timetable" component={Timetable} />
         </Stack.Navigator>
       </>
     ),

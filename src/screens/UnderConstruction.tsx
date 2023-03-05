@@ -14,7 +14,7 @@ import tw from '../lib/tw';
 
 const UnderConstruction = () => {
   return (
-    <ScreenWithBackButtonView>
+    <ScreenWithBackButtonView label='UnderConstruction'>
       <View style={tw`items-center justify-center relative`}>
         <Image
           style={tw`w-50 h-40 my-20`}

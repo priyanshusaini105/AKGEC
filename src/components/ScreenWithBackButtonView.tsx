@@ -1,30 +1,27 @@
-import { View, TouchableOpacity, StyleProp } from 'react-native';
+import { View, TouchableOpacity, StyleProp , Text} from 'react-native';
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
-import tw from 'twrnc';
-import Svg, {Path} from 'react-native-svg';
-import { ViewStyle } from 'react-native/types';
+import { useNavigation } from '@react-navigation/native';
+import Svg, { Path } from 'react-native-svg';
+import { ViewStyle, TextStyle } from 'react-native/types';
+import tw from '../lib/tw';
 
-const ScreenWithBackButtonView = ({children,style}: {children: JSX.Element,style?:StyleProp<ViewStyle>}) => {
+const ScreenWithBackButtonView = ({ children, style, label,labelStyle }: { children: JSX.Element, style?: StyleProp<ViewStyle>, labelStyle?: StyleProp<TextStyle>, label?: string; }) => {
   const navigation = useNavigation();
   return (
     <View style={style}>
       <TouchableOpacity
-        style={tw`self-start m-5 absolute z-5`}
+        style={tw`self-start m-4 absolute z-5`}
         onPress={() => navigation.goBack()}>
         <Svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none">
-          <Path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M11.4939 20.5644C11.1821 20.8372 10.7083 20.8056 10.4356 20.4939L3.43557 12.4939C3.18814 12.2111 3.18814 11.7889 3.43557 11.5061L10.4356 3.50613C10.7083 3.1944 11.1822 3.16281 11.4939 3.43557C11.8056 3.70834 11.8372 4.18216 11.5644 4.49388L5.65283 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L5.65283 12.75L11.5644 19.5061C11.8372 19.8179 11.8056 20.2917 11.4939 20.5644Z"
-            fill="#fff"
-          />
+          fill='#fff'
+          width='30px'
+          height='30px'
+          viewBox='-78.5 0 512 512'
+        >
+          <Path d='M257 64L291 98 128 262 291 426 257 460 61 262 257 64Z' />
         </Svg>
       </TouchableOpacity>
+      <Text style={[tw`text-xl self-start m-4 ml-13 z-4 font-nunito`,labelStyle]} ellipsizeMode="tail" numberOfLines={1}>{label}</Text>
       {children}
     </View>
   );
