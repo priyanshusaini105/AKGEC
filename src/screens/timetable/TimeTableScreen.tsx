@@ -5,11 +5,9 @@ import tw from '../../lib/tw';
 import { RouteProp } from '@react-navigation/native';
 import { TopTabTimetableParamList } from '../../navigation/types';
 
-type TimeTableScreenRouteProp = RouteProp<TopTabTimetableParamList, Tdays>;
-
 
 interface Props {
-    route: TimeTableScreenRouteProp;
+    route: RouteProp<TopTabTimetableParamList, Tdays>;
 }
 
 const TimeTableScreen = ({ route }: Props) => {

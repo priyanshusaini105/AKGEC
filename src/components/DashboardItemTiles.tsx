@@ -1,4 +1,3 @@
-
 import { useNavigation } from '@react-navigation/native';
 import { Text, TouchableOpacity } from 'react-native';
 import { IDashboardItem } from '../constants/types';
@@ -23,7 +22,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
             auth()
               .signOut()
               .then(() => navigation.replace('SignIn'));
-          else navigation.navigate("Assignments");
+          else navigation.navigate(item.target);
         }}>
         {item.icon}
         <Text style={{...tw`text-5 text-black text-center font-nunito`}}>{item.name}</Text>

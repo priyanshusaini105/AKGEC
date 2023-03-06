@@ -27,7 +27,15 @@ export interface IStudentProfileType extends IStudentDataType {}
 export interface IDashboardItem {
   id: string;
   name: string;
-  target: string;
+  target:
+    | 'UnderConstruction'
+    | 'Result'
+    | 'Classroom'
+    | 'Assignments'
+    | 'Timetable'
+    | 'logout'
+    | 'ChangePassword'
+    | 'Notices';
   icon: JSX.Element;
 }
 
@@ -85,12 +93,12 @@ export interface IDocumentDetail {
 export interface ITimeTablePeriod {
   time: string;
   subject: string;
-  teacher:string;
-  periodNo:number;
+  teacher: string;
+  periodNo: number;
 }
 
 export type Tdays =
-  'Monday'
+  | 'Monday'
   | 'Tuesday'
   | 'Wednesday'
   | 'Thursday'
@@ -98,5 +106,13 @@ export type Tdays =
   | 'Saturday';
 export interface ITimeTableData {
   list: ITimeTablePeriod[];
-  day:Tdays;
+  day: Tdays;
+}
+export interface INotice {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  isImportant: boolean;
+  isRead: boolean;
 }

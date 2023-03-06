@@ -9,6 +9,7 @@ import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import StackNavigator from './navigation/StackNavigator';
 import {store} from './redux/store';
+import database  from '@react-native-firebase/database';
 
 const theme = {
   ...DefaultTheme,
@@ -22,6 +23,8 @@ const theme = {
 
 
 const App = () => {
+
+  database().setPersistenceEnabled(true);
   
   return (
       <Provider store={store}>

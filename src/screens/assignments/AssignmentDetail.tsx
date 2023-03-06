@@ -5,13 +5,11 @@ import ScreenWithBackButtonView from '../../components/ScreenWithBackButtonView'
 import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
 import { StarBg } from './../../svg';
 import tw from '../../lib/tw'
+import { RouteProp } from '@react-navigation/native';
+import { TStackNavType } from '../../navigation/types';
 
 interface Props {
-  route: {
-    params: {
-      assignment: IAssignmentDetails;
-    };
-  };
+  route: RouteProp<TStackNavType,'AssignmentDetail'>
 }
 
 

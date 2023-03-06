@@ -1,4 +1,4 @@
-import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import {
   Dashboard,
   SignIn,
@@ -12,17 +12,20 @@ import {
   AssignmentScreen,
   AssignmentDetail,
   Timetable,
+  Result,
+  NoticeBoard,
 } from '../screens';
-import {useState, useEffect, useMemo} from 'react';
-import type {TStackNavType} from './types';
-import {Alert, Easing} from 'react-native';
-import {TransitionSpec} from '@react-navigation/stack/lib/typescript/src/types';
-import { useSelector} from 'react-redux';
-import {RootState} from '../redux/store';
+import { useState, useEffect, useMemo } from 'react';
+import type { TStackNavType } from './types';
+import { Alert, Easing } from 'react-native';
+import { TransitionSpec } from '@react-navigation/stack/lib/typescript/src/types';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 import unsubscriber from '../actions/authActions';
-import {useNetInfo} from '@react-native-community/netinfo';
+import { useNetInfo } from '@react-native-community/netinfo';
 import UnderConstruction from './../screens/UnderConstruction';
-import {store} from '../redux/store/index';
+import { store } from '../redux/store/index';
+import Notice from '../screens/notice/index';
 
 const Stack = createStackNavigator<TStackNavType>();
 
@@ -49,7 +52,7 @@ const closeConfig: TransitionSpec = {
 
 function DisconnectedAlert() {
   const netInfo = useNetInfo();
-  if ((netInfo.isConnected===false)) Alert.alert('Unable to Connect To Internet');
+  if ((netInfo.isConnected === false)) Alert.alert('Unable to Connect To Internet');
   return null;
 }
 
@@ -58,10 +61,7 @@ const StackNavigator = () => {
   const [isReady, setIsReady] = useState<boolean>(false);
 
   useEffect(() => {
-    const initializeApp = async () => {
-      await Promise.all([unsubscriber(store.dispatch)]);
-    };
-    initializeApp();
+    unsubscriber(store.dispatch);
     const timeout = setTimeout(() => {
       setIsReady(true);
     }, 1500);
@@ -102,6 +102,9 @@ const StackNavigator = () => {
           <Stack.Screen name="AssignmentScreen" component={AssignmentScreen} />
           <Stack.Screen name="AssignmentDetail" component={AssignmentDetail} />
           <Stack.Screen name="Timetable" component={Timetable} />
+          <Stack.Screen name="Result" component={Result} />
+          <Stack.Screen name="Notices" component={Notice} />
+          <Stack.Screen name="NoticeBoard" component={NoticeBoard} />
         </Stack.Navigator>
       </>
     ),

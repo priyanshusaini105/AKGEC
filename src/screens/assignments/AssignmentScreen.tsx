@@ -6,14 +6,11 @@ import { StarBg } from '../../svg'
 import { ISubjectAssignments, ISubjectList } from '../../constants/types'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { TStackNavType } from '../../navigation/types'
+import { RouteProp } from '@react-navigation/native';
 
 interface Props {
-  route: {
-    params: {
-      subject: ISubjectList
-    };
-  };
-  navigation: StackNavigationProp<TStackNavType>
+  route: RouteProp<TStackNavType, 'AssignmentScreen'>;
+  navigation: StackNavigationProp<TStackNavType>;
 }
 
 

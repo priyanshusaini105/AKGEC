@@ -8,7 +8,7 @@ const unsubscriber = (dispatch: AppDispatch) =>
   auth().onAuthStateChanged(user => {
     if (user) {
       fetchStudentData(dispatch, user.displayName??'Invalid');
-      getStudentAttendance(dispatch);
+      const ref = getStudentAttendance(dispatch);
       dispatch(
         setAuth({
           uid: user.uid,

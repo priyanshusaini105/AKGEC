@@ -12,4 +12,7 @@ import AssignmentScreen from './assignments/AssignmentScreen';
 import AssignmentDetail from './assignments/AssignmentDetail';
 import Timetable from './timetable/index';
 import TimeTableScreen from './timetable/TimeTableScreen';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen}
+import Result from './result';
+import Notice from './notice/index';
+import NoticeBoard from './notice/NoticeBoard';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notice,NoticeBoard}
