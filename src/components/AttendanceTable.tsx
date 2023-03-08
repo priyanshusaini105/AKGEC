@@ -17,13 +17,17 @@ interface IAttendanceData {
   };
 }
 
-interface propTypes {
+interface PropTypes {
   subjectList: Array<string>;
   attendanceData: IAttendanceData;
+  currentPage:number;
+  rowsPerPage:number;
 }
 
-const AttendanceTable = ({subjectList, attendanceData}: propTypes) => {
-  const dates = Object.keys(attendanceData);
+const AttendanceTable = ({subjectList, attendanceData,currentPage,rowsPerPage}: PropTypes) => {
+  const startingIndex=(currentPage-1)*rowsPerPage;
+  const endingIndex=startingIndex+rowsPerPage;
+  const dates = Object.keys(attendanceData).slice(startingIndex,endingIndex);
 
   return (
     <View style={tw`flex-row bg-sky-200 rounded-t-3 m-3 shadow-lg shadow-blue-400`}>
