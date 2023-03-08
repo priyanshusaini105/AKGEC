@@ -24,7 +24,8 @@ export type TStackNavType={
     Notices:undefined;
     NoticeBoard:{
         notice:INotice;
-    }
+    };
+    Holidays:undefined;
 };
 export type TopTabAttendanceParamList = {
     Recent: undefined;

@@ -6,17 +6,17 @@ import Svg, {
   G,
   Defs,
   LinearGradient,
-  Stop
+  Stop,
+  SvgProps
 } from "react-native-svg"
 
-function SignInBg(props:any) {
+function SignInBg(props:SvgProps) {
   return (
     <Svg
       width={322}
       height={162}
       viewBox="0 0 322 162"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <Path

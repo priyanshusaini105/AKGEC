@@ -14,6 +14,9 @@ import {
   Timetable,
   Result,
   NoticeBoard,
+  Notices,
+  UnderConstruction,
+  Holidays
 } from '../screens';
 import { useState, useEffect, useMemo } from 'react';
 import type { TStackNavType } from './types';
@@ -23,9 +26,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import unsubscriber from '../actions/authActions';
 import { useNetInfo } from '@react-native-community/netinfo';
-import UnderConstruction from './../screens/UnderConstruction';
 import { store } from '../redux/store/index';
-import Notice from '../screens/notice/index';
+
 
 const Stack = createStackNavigator<TStackNavType>();
 
@@ -77,12 +79,17 @@ const StackNavigator = () => {
           screenOptions={{
             headerShown: false,
             // gestureEnabled: true,
-            ...TransitionPresets.SlideFromRightIOS,
-            gestureDirection: 'horizontal',
-            transitionSpec: {
-              open: config,
-              close: closeConfig,
-            },
+            // ...TransitionPresets.ModalTransition,
+            // ...TransitionPresets.ModalPresentationIOS,
+            // ...TransitionPresets.ModalSlideFromBottomIOS,
+            ...TransitionPresets.RevealFromBottomAndroid,
+            // ...TransitionPresets.BottomSheetAndroid,
+            // ...TransitionPresets.SlideFromRightIOS,
+            gestureDirection: 'vertical',
+            // transitionSpec: {
+            //   open: config,
+            //   close: closeConfig,
+            // },
             headerMode: 'float',
           }}
           // animation='fade'
@@ -103,8 +110,9 @@ const StackNavigator = () => {
           <Stack.Screen name="AssignmentDetail" component={AssignmentDetail} />
           <Stack.Screen name="Timetable" component={Timetable} />
           <Stack.Screen name="Result" component={Result} />
-          <Stack.Screen name="Notices" component={Notice} />
+          <Stack.Screen name="Notices" component={Notices} />
           <Stack.Screen name="NoticeBoard" component={NoticeBoard} />
+          <Stack.Screen name="Holidays" component={Holidays} />
         </Stack.Navigator>
       </>
     ),

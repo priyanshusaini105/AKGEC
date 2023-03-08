@@ -20,6 +20,7 @@
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/stack": "^6.3.10",
     "@reduxjs/toolkit": "^1.9.1",
+    "dayjs": "^1.11.7",
     "react": "18.2.0",
     "react-hook-form": "^7.42.1",
     "react-native": "0.71.1",

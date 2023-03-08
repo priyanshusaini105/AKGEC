@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Svg, {G, Path, Defs} from 'react-native-svg';
+import Svg, { G, Path, Defs, SvgProps } from 'react-native-svg';
 
 export function DocumentsIcon() {
   return (
@@ -275,4 +275,31 @@ export function ClassroomIcon() {
       />
     </Svg>
   );
+}
+
+export function ArrowIcon( props: SvgProps & { direction: 'left' | 'right' }) {
+  const { direction, ...rest } = props;
+  if (direction === 'left') {
+    return (
+      <Svg
+        fill="#fff"
+        width="30px"
+        height="30px"
+        viewBox="-78.5 0 512 512"
+        {...rest}
+      >
+        <Path d="M257 64L291 98 128 262 291 426 257 460 61 262 257 64Z" />
+      </Svg>
+    );
+  } else {
+    return <Svg
+      fill='#fff'
+      width='30px'
+      height='30px'
+      viewBox='-77 0 512 512'
+      {...rest}
+    >
+      <Path d='M98 460L64 426 227 262 64 98 98 64 294 262 98 460Z' />
+    </Svg>
+  }
 }

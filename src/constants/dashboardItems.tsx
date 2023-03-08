@@ -3,10 +3,10 @@ import { AssignmentIcon, TimeTableIcon, DateSheetIcon, ChangePasswordIcon, Event
 
 export const dashboardItems: IDashboardItem[] = [
     {
-        id: '2',
-        name: "Documents",
-        target: "UnderConstruction",
-        icon: <DocumentsIcon />
+        id: '4',
+        name: "Time Table",
+        target: "Timetable",
+        icon: <TimeTableIcon />
     },
     {
         id: '3',
@@ -17,7 +17,7 @@ export const dashboardItems: IDashboardItem[] = [
     {
         id: '10',
         name: "Holidays",
-        target: "UnderConstruction",
+        target: "Holidays",
         icon: <HolidayIcon />
     },
     {
@@ -25,12 +25,6 @@ export const dashboardItems: IDashboardItem[] = [
         name: "Classroom",
         target: "Classroom",
         icon: <ClassroomIcon />
-    },
-    {
-        id: '1',
-        name: "Hostel",
-        target: "UnderConstruction",
-        icon: <HostelIcon />
     },
     {
         id: '9',
@@ -45,22 +39,28 @@ export const dashboardItems: IDashboardItem[] = [
         icon: <GroupChatIcon />
     },
     {
-        id: '4',
-        name: "Time Table",
-        target: "Timetable",
-        icon: <TimeTableIcon />
+        id: '42',
+        name: "Results",
+        target: "Result",
+        icon: <ResultIcon />
+    },
+    {
+        id: '2',
+        name: "Documents",
+        target: "UnderConstruction",
+        icon: <DocumentsIcon />
+    },
+    {
+        id: '1',
+        name: "Hostel",
+        target: "UnderConstruction",
+        icon: <HostelIcon />
     },
     {
         id: '5',
         name: "Date Sheet",
         target: "UnderConstruction",
         icon: <DateSheetIcon />
-    },
-    {
-        id: '42',
-        name: "Results",
-        target: "Result",
-        icon: <ResultIcon />
     },
     {
         id: '7',

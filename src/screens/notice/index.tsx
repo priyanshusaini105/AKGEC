@@ -54,7 +54,7 @@ const notices: INotice[] = [
 
 
 
-const Notice = ({ navigation }: { navigation: StackNavigationProp<TStackNavType> }) => {
+const Notices = ({ navigation }: { navigation: StackNavigationProp<TStackNavType> }) => {
   return (
     <ScreenWithBackButtonView label="Notices" >
       <>
@@ -80,4 +80,4 @@ const Notice = ({ navigation }: { navigation: StackNavigationProp<TStackNavType>
   )
 }
 
-export default Notice
+export default Notices

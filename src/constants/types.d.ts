@@ -35,7 +35,8 @@ export interface IDashboardItem {
     | 'Timetable'
     | 'logout'
     | 'ChangePassword'
-    | 'Notices';
+    | 'Notices'
+    | 'Holidays';
   icon: JSX.Element;
 }
 
@@ -115,4 +116,9 @@ export interface INotice {
   date: string;
   isImportant: boolean;
   isRead: boolean;
+}
+export interface IHoliday {
+  name: string;
+  date: string;
+  description: string;
 }

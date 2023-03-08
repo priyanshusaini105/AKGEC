@@ -10,9 +10,10 @@ import ChangePassword from './signin/ChangePassword';
 import Assignments from './assignments';
 import AssignmentScreen from './assignments/AssignmentScreen';
 import AssignmentDetail from './assignments/AssignmentDetail';
-import Timetable from './timetable/index';
+import Timetable from './timetable';
 import TimeTableScreen from './timetable/TimeTableScreen';
 import Result from './result';
-import Notice from './notice/index';
+import Notices from './notice';
 import NoticeBoard from './notice/NoticeBoard';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notice,NoticeBoard}
+import Holidays from './holidays';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notices,NoticeBoard,Holidays}
