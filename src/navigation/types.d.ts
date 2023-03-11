@@ -1,4 +1,4 @@
-import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice } from '../constants/types';
+import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice, IEvent } from '../constants/types';
 
 export type TStackNavType={
     Dashboard:undefined;
@@ -26,6 +26,10 @@ export type TStackNavType={
         notice:INotice;
     };
     Holidays:undefined;
+    EventsList:undefined;
+    EventDetails:{
+        event:IEvent;
+    }
 };
 export type TopTabAttendanceParamList = {
     Recent: undefined;

@@ -22,7 +22,7 @@ const Assignments = ({navigation}:{navigation:StackNavigationProp<TStackNavType>
 
 
   return (
-    <ScreenWithBackButtonView label='Assignemnts'>
+    <ScreenWithBackButtonView label='Assignments'>
       <>
         <StarBg />
         <View style={tw`roundedLayout -top-2 py-4 h-full`}>
@@ -37,7 +37,7 @@ const Assignments = ({navigation}:{navigation:StackNavigationProp<TStackNavType>
                   <Text style={tw`text-gray-500 font-nunito`}>Recent Assign: </Text>
                   <Text style={tw`text-gray-500 font-nunito m-1 self-end`}>22-5-2023</Text>
                   <TouchableOpacity onPress={()=>navigation.navigate("AssignmentScreen",{subject})}>
-                    <Text style={tw`text-blue-500 font-nunito self-end text-4`}>View &gt;</Text>
+                    <Text style={tw`text-blue-500 font-nunito self-end text-4`}>View &#10148;</Text>
                   </TouchableOpacity>
                 </View>
               </View>

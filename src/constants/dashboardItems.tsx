@@ -35,7 +35,7 @@ export const dashboardItems: IDashboardItem[] = [
     {
         id: '7',
         name: "Events",
-        target: "UnderConstruction",
+        target: "EventsList",
         icon: <EventsIcon />
     },
     {

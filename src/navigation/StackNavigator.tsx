@@ -16,7 +16,9 @@ import {
   NoticeBoard,
   Notices,
   UnderConstruction,
-  Holidays
+  Holidays,
+  EventsList,
+  EventDetails
 } from '../screens';
 import { useState, useEffect, useMemo } from 'react';
 import type { TStackNavType } from './types';
@@ -113,6 +115,8 @@ const StackNavigator = () => {
           <Stack.Screen name="Notices" component={Notices} />
           <Stack.Screen name="NoticeBoard" component={NoticeBoard} />
           <Stack.Screen name="Holidays" component={Holidays} />
+          <Stack.Screen name="EventsList" component={EventsList} />
+          <Stack.Screen name="EventDetails" component={EventDetails} />
         </Stack.Navigator>
       </>
     ),

@@ -21,8 +21,8 @@ export interface IStudentDataType {
     studentId: number | null;
     year: 1 | 2 | 3 | 4 | null;
     sem: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | null;
-    dob:string|null;
-    gender:string|null;
+    dob: string | null;
+    gender: string | null;
   };
 }
 // export interface IStudentProfileType extends IStudentDataType {}
@@ -38,7 +38,8 @@ export interface IDashboardItem {
     | 'logout'
     | 'ChangePassword'
     | 'Notices'
-    | 'Holidays';
+    | 'Holidays'
+    | 'EventsList';
   icon: JSX.Element;
 }
 
@@ -123,4 +124,17 @@ export interface IHoliday {
   name: string;
   date: string;
   description: string;
+}
+export interface IEvent{
+  id: number;
+    name: string;
+    description: string;
+    date: string;
+    time: string;
+    location: string;
+    image: string;
+    organizer: {
+        name: string;
+        email: string;
+    };
 }
