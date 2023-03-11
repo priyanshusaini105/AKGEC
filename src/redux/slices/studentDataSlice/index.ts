@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {IStudentDataType, IStudentProfileType} from '../../../constants/types';
+import {IStudentDataType} from '../../../constants/types';
 
-const initialState: IStudentProfileType = {
+const initialState: IStudentDataType = {
   uid: null,
   sid: null,
   feeDue: null,
@@ -14,6 +14,8 @@ const initialState: IStudentProfileType = {
     studentId: null,
     year: null,
     sem: null,
+    dob:null,
+    gender:null,
   },
 };
 
@@ -33,6 +35,8 @@ export const studentDataSlice = createSlice({
       state.studentInfo.studentId = action.payload.studentInfo.studentId;
       state.studentInfo.year = action.payload.studentInfo.year;
       state.studentInfo.sem = action.payload.studentInfo.sem;
+      state.studentInfo.dob = action.payload.studentInfo.dob;
+      state.studentInfo.gender = action.payload.studentInfo.gender;
     },
   },
 });

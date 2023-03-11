@@ -23,15 +23,6 @@ const Table = () => {
   const rowsPerPage = 10;
   const totalPages = Math.ceil(Object.keys(attendanceData).length / rowsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPageState, setRowsPerPageState] = useState(10);
-  const [page, setPage] = useState(0);
-  // const [rowsPerPage, setRowsPerPage] = useState(10);
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
-  };
-  const handleChangeRowsPerPage = (event: unknown, newRowsPerPage: number) => {
-    // setRowsPerPage(newRowsPerPage);
-  };
 
   const isFirst = currentPage === 1;
   const isLast = currentPage === totalPages;
@@ -46,23 +37,22 @@ const Table = () => {
       />
       <View style={tw`absolute top-110 mx-5`}>
         <View style={tw`flex-row justify-center items-center gap-5`}>
-        <View style={tw`flex-row`}>
-  <TouchableOpacity
-    style={tw`bg-${isFirst ? 'stone-400' : 'primary'} rounded-l-2 px-2 items-center justify-center w-10`}
-    onPress={() => setCurrentPage(currentPage - 1)}
-    disabled={isFirst}
-  >
-    <Text style={tw`text-white text-7`}>{'|<'}</Text>
-  </TouchableOpacity>
-  <TouchableOpacity
-    style={tw`bg-${isLast ? 'stone-400' : 'primary'} rounded-r-2 px-2 items-center justify-center w-10`}
-    onPress={() => setCurrentPage(currentPage + 1)}
-    disabled={isLast}
-    width={50} // set a fixed width
-  >
-    <Text style={tw`text-white text-7`}>{'>|'}</Text>
-  </TouchableOpacity>
-</View>
+          <View style={tw`flex-row`}>
+            <TouchableOpacity
+              style={tw`bg-${isFirst ? 'stone-400' : 'primary'} rounded-l-2 px-2 items-center justify-center w-10`}
+              onPress={() => setCurrentPage(currentPage - 1)}
+              disabled={isFirst}
+            >
+              <Text style={tw`text-white text-7`}>{'|<'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={tw`bg-${isLast ? 'stone-400' : 'primary'} rounded-r-2 px-2 items-center justify-center w-10`}
+              onPress={() => setCurrentPage(currentPage + 1)}
+              disabled={isLast}
+            >
+              <Text style={tw`text-white text-7`}>{'>|'}</Text>
+            </TouchableOpacity>
+          </View>
 
           <View style={tw``}>
             <Text style={tw`text-center text-black font-nunito`}>
@@ -71,7 +61,7 @@ const Table = () => {
           </View>
           <View style={tw``}>
             <Text style={tw`text-center text-black font-nunito`}>
-              Rows per page: {rowsPerPageState}
+              Rows per page: {rowsPerPage}
             </Text>
           </View>
         </View>

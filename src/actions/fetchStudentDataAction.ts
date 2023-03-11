@@ -22,6 +22,8 @@ function fetchStudentData(dispatch: AppDispatch, sid: string) {
             studentId: data.studentId,
             year,
             sem: data.semester,
+            dob:data.dob,
+            gender:data.gender
           },
         }),
       );

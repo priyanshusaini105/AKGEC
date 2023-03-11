@@ -10,12 +10,13 @@ import {Provider} from 'react-redux';
 import StackNavigator from './navigation/StackNavigator';
 import {store} from './redux/store';
 import database  from '@react-native-firebase/database';
+import tw from './lib/tw';
 
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: '#2855AE',
+    background: tw.color('primary')?.toString(),
   },
 };
 

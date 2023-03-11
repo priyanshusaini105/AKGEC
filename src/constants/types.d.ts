@@ -21,9 +21,11 @@ export interface IStudentDataType {
     studentId: number | null;
     year: 1 | 2 | 3 | 4 | null;
     sem: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | null;
+    dob:string|null;
+    gender:string|null;
   };
 }
-export interface IStudentProfileType extends IStudentDataType {}
+// export interface IStudentProfileType extends IStudentDataType {}
 export interface IDashboardItem {
   id: string;
   name: string;
