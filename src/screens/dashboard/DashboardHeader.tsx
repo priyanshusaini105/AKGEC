@@ -34,7 +34,7 @@ export default function DashboardHeader({
   const addSuffix: (num: number | null) => string = num =>
     num ? num + suffix[num - 1] : suffix[8];
   return (
-    <View style={{ ...tw`flex-row justify-between p-4 pt-10 items-center` }}>
+    <View style={{ ...tw`flex-row justify-between p-4 pt-5 items-center` }}>
       {/* Header */}
       <View>
         <Text style={{ ...tw`text-6 font-nunito`, }}>Hi, {studentData.studentInfo.name}</Text>

@@ -21,28 +21,34 @@ export const dashboardItems: IDashboardItem[] = [
         icon: <HolidayIcon />
     },
     {
-        id: '10',
-        name: "Classroom",
-        target: "Classroom",
-        icon: <ClassroomIcon />
-    },
-    {
         id: '9',
-        name: "Assignemt",
+        name: "Assignment",
         target: "Assignments",
         icon: <AssignmentIcon />
-    },
-    {
-        id: '31',
-        name: "Group Discussion",
-        target: "UnderConstruction",
-        icon: <GroupChatIcon />
     },
     {
         id: '42',
         name: "Results",
         target: "Result",
         icon: <ResultIcon />
+    },
+    {
+        id: '7',
+        name: "Events",
+        target: "UnderConstruction",
+        icon: <EventsIcon />
+    },
+    {
+        id: '10',
+        name: "Classroom",
+        target: "Classroom",
+        icon: <ClassroomIcon />
+    },
+    {
+        id: '31',
+        name: "Group Discussion",
+        target: "UnderConstruction",
+        icon: <GroupChatIcon />
     },
     {
         id: '2',
@@ -61,12 +67,6 @@ export const dashboardItems: IDashboardItem[] = [
         name: "Date Sheet",
         target: "UnderConstruction",
         icon: <DateSheetIcon />
-    },
-    {
-        id: '7',
-        name: "Events",
-        target: "UnderConstruction",
-        icon: <EventsIcon />
     },
     {
         id: '6',

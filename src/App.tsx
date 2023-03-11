@@ -11,12 +11,13 @@ import StackNavigator from './navigation/StackNavigator';
 import {store} from './redux/store';
 import database  from '@react-native-firebase/database';
 import tw from './lib/tw';
+import { StatusBar } from 'react-native';
 
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: tw.color('primary')?.toString(),
+    background: tw.color('primary') as string,
   },
 };
 
@@ -29,6 +30,10 @@ const App = () => {
   
   return (
       <Provider store={store}>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor={tw.color('primary')}
+        />
         <NavigationContainer theme={theme}>
           <StackNavigator />
         </NavigationContainer>
