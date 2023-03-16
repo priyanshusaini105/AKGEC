@@ -37,17 +37,17 @@ export default function DashboardHeader({
     <View style={{ ...tw`flex-row justify-between p-4 pt-5 items-center` }}>
       {/* Header */}
       <View>
-        <Text style={{ ...tw`text-6 font-nunito`, }}>Hi, {studentData.studentInfo.name}</Text>
-        <Text style={{ ...tw`opacity-50 text-4 font-nunito` }}>
-          Btech {addSuffix(studentData?.studentInfo.year)} Year |{' '}
+        <Text style={{ ...tw`text-6 font-nunito text-white`, }}>Hi, {studentData.studentInfo.name}</Text>
+        <Text style={{ ...tw`opacity-50 text-4 font-nunito text-white` }}>
+          B.Tech {addSuffix(studentData?.studentInfo.year)} Year |{' '}
           {addSuffix(studentData?.studentInfo.sem)} sem
         </Text>
-        <Text style={{ ...tw`opacity-50 text-4 font-nunito` }}>
+        <Text style={{ ...tw`opacity-50 text-4 font-nunito text-white` }}>
           Student Id: {studentData?.studentInfo.studentId}
         </Text>
         <Text
           style={{
-            ...tw`bg-white rounded-full text-quaternary font-nunito p-2 py-0 w-20 mt-1 text-4 `,
+            ...tw`bg-white rounded-full text-quaternary font-nunito px-2 self-start mt-1 text-4 `,
           }}>
           {studentData?.studentInfo.session}
         </Text>

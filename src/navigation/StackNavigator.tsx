@@ -18,7 +18,10 @@ import {
   UnderConstruction,
   Holidays,
   EventsList,
-  EventDetails
+  EventDetails,
+  Hostel,
+  HostelRoom,
+  Mess
 } from '../screens';
 import { useState, useEffect, useMemo } from 'react';
 import type { TStackNavType } from './types';
@@ -117,6 +120,9 @@ const StackNavigator = () => {
           <Stack.Screen name="Holidays" component={Holidays} />
           <Stack.Screen name="EventsList" component={EventsList} />
           <Stack.Screen name="EventDetails" component={EventDetails} />
+          <Stack.Screen name="Hostel" component={Hostel} />
+          <Stack.Screen name="HostelRoom" component={HostelRoom} />
+          <Stack.Screen name="Mess" component={Mess} />
         </Stack.Navigator>
       </>
     ),

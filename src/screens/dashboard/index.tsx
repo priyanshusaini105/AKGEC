@@ -66,7 +66,7 @@ const Dashboard = () => {
           data={dashboardItems}
           scrollEnabled={true}
           keyExtractor={item => item.id}
-          style={{...tw`mt-[-75]`}}
+          style={tw`mt-[-75]`}
           renderItem={item => <DashboardItemTiles item={item.item} />}
         />
       </View>

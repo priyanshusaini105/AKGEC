@@ -39,6 +39,12 @@ export const dashboardItems: IDashboardItem[] = [
         icon: <EventsIcon />
     },
     {
+        id: '1',
+        name: "Hostel",
+        target: "Hostel",
+        icon: <HostelIcon />
+    },
+    {
         id: '10',
         name: "Classroom",
         target: "Classroom",
@@ -55,12 +61,6 @@ export const dashboardItems: IDashboardItem[] = [
         name: "Documents",
         target: "UnderConstruction",
         icon: <DocumentsIcon />
-    },
-    {
-        id: '1',
-        name: "Hostel",
-        target: "UnderConstruction",
-        icon: <HostelIcon />
     },
     {
         id: '5',

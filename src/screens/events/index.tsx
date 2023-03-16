@@ -58,7 +58,7 @@ const EventsList = ({navigation}:{navigation:StackNavigationProp<TStackNavType>}
             <>
                 <StarBg />
                 <View style={tw`roundedLayout h-full`}>
-                    <Text style={tw`text-primary underline font-nunito-bold  text-center text-7 m-5`}>Result</Text>
+                    <Text style={tw`text-primary underline font-nunito-bold  text-center text-7 m-5`}>Events</Text>
                     <View style={tw`border border-gray-200  -mx-3 shadow-lg shadow-blue-900`} />
                     <FlatList
                         data={eventsData.events}

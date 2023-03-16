@@ -15,7 +15,7 @@ const ScreenWithBackButtonView = ({ children, style, label,labelStyle }: { child
         onPress={() => navigation.goBack()}>
         <ArrowIcon direction='left' />
       </TouchableOpacity>
-      <Text style={[tw`text-xl self-start m-4 ml-13 z-4 font-nunito`,labelStyle]} ellipsizeMode="tail" numberOfLines={1}>{label}</Text>
+      <Text style={[tw`text-xl self-start m-4 ml-13 z-4 font-nunito text-white`,labelStyle]} ellipsizeMode="tail" numberOfLines={1}>{label}</Text>
       {children}
     </View>
   );

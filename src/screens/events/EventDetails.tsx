@@ -14,7 +14,7 @@ interface Props {
 const EventDetails = ({ route }: Props) => {
   const { event } = route.params
   return (
-    <ScreenWithBackButtonView>
+    <ScreenWithBackButtonView label={event.name+" Details"}>
       <>
         <StarBg />
         <View style={tw`roundedLayout h-full`}>
@@ -33,11 +33,11 @@ const EventDetails = ({ route }: Props) => {
               <Text style={tw`text-primary font-nunito-bold  text-center text-5 m-5`}>Time: {event.time}</Text>
               <Text style={tw`text-primary font-nunito-bold  text-center text-5 m-5`}>Location: {event.location}</Text>
               <View style={tw`flex-row justify-between mx-3 gap-1`}>
-                <View>
+                <View style={tw`w-4/10`}>
                   <Text style={tw`text-slate-500 font-nunito  text-left text-3`}>Organizer:</Text>
                   <Text style={tw`text-primary font-nunito-semibold  text-left text-[3.5] underline`}>{event.organizer.name}</Text>
                 </View>
-                <View>
+                <View style={tw`w-4/10`}>
                   <Text style={tw`text-slate-500 font-nunito  text-right text-3`}>Email:</Text>
                   <Text style={tw`text-primary font-nunito-semibold  text-right text-[3.5]`}>{event.organizer.email}</Text>
                 </View>

@@ -14,7 +14,7 @@ type Props = {
 const IButton = ({children,style,onPress}:Props) => {
   return (
     <TouchableOpacity style={[tw`bg-primary p-3 my-8 rounded-xl`,style]} onPress={()=>onPress()}>
-      <Text style={tw`text-center font-nunito-bold text-lg`}>{children}</Text>
+      <Text style={tw`text-center font-nunito-bold text-lg text-white`}>{children}</Text>
     </TouchableOpacity>
   )
 }

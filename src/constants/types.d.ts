@@ -39,6 +39,7 @@ export interface IDashboardItem {
     | 'ChangePassword'
     | 'Notices'
     | 'Holidays'
+    | 'Hostel'
     | 'EventsList';
   icon: JSX.Element;
 }
@@ -137,4 +138,46 @@ export interface IEvent{
         name: string;
         email: string;
     };
+}
+export interface IMenu{
+  [day:Tdays]:{
+    breakfast: string[];
+    lunch: string[];
+    dinner: string[];
+  }
+}
+
+export interface IMessData {
+  name: string;
+  manager: {
+    name: string;
+    email: string;
+    phone: string;
+  };
+  menu: IMenu;
+}
+export interface IRoomData {
+  number: string;
+  floor: string;
+  capacity: number;
+  occupants: {
+    name: string;
+    email: string;
+    phone: string;
+  }[];
+}
+export interface IHostelData {
+  name: string;
+  image: string;
+  warden: {
+    name: string;
+    email: string;
+    phone: string;
+  }
+  room: IRoomData;
+  mess: IMessData;
+}
+export interface IHostelObj {
+  alloted: boolean;
+  data?: IHostelData;
 }

@@ -18,4 +18,7 @@ import NoticeBoard from './notice/NoticeBoard';
 import Holidays from './holidays';
 import EventsList from './events';
 import EventDetails from './events/EventDetails';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notices,NoticeBoard,Holidays,EventsList,EventDetails}
+import Hostel from './hostel';
+import HostelRoom from './hostel/HostelRoom';
+import Mess from './hostel/Mess';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notices,NoticeBoard,Holidays,EventsList,EventDetails,Hostel,HostelRoom,Mess}

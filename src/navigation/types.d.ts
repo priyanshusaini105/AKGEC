@@ -1,4 +1,4 @@
-import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice, IEvent } from '../constants/types';
+import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice, IEvent, IMessData, IRoomData } from '../constants/types';
 
 export type TStackNavType={
     Dashboard:undefined;
@@ -30,6 +30,13 @@ export type TStackNavType={
     EventDetails:{
         event:IEvent;
     }
+    Hostel:undefined;
+    HostelRoom:{
+        roomData?:IRoomData
+    };
+    Mess:{
+        messData?:IMessData;
+    };
 };
 export type TopTabAttendanceParamList = {
     Recent: undefined;
