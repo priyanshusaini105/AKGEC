@@ -50,24 +50,24 @@ export const dashboardItems: IDashboardItem[] = [
         target: "Classroom",
         icon: <ClassroomIcon />
     },
-    {
-        id: '31',
-        name: "Group Discussion",
-        target: "UnderConstruction",
-        icon: <GroupChatIcon />
-    },
-    {
-        id: '2',
-        name: "Documents",
-        target: "UnderConstruction",
-        icon: <DocumentsIcon />
-    },
-    {
-        id: '5',
-        name: "Date Sheet",
-        target: "UnderConstruction",
-        icon: <DateSheetIcon />
-    },
+    // {
+    //     id: '31',
+    //     name: "Group Discussion",
+    //     target: "UnderConstruction",
+    //     icon: <GroupChatIcon />
+    // },
+    // {
+    //     id: '2',
+    //     name: "Documents",
+    //     target: "UnderConstruction",
+    //     icon: <DocumentsIcon />
+    // },
+    // {
+    //     id: '5',
+    //     name: "Date Sheet",
+    //     target: "UnderConstruction",
+    //     icon: <DateSheetIcon />
+    // },
     {
         id: '6',
         name: "Change Password",

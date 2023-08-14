@@ -181,3 +181,17 @@ export interface IHostelObj {
   alloted: boolean;
   data?: IHostelData;
 }
+export interface IClassData {
+    section_id: string;
+    room_number: string;
+    capacity: number;
+    schedule: IClassesSchedule[]
+}
+export interface IClassesSchedule {
+  class_id: string;
+  class_name: string;
+  professor: string;
+  day: string;
+  start_time: string;
+  end_time: string;
+}

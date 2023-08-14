@@ -1,4 +1,4 @@
-import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice, IEvent, IMessData, IRoomData } from '../constants/types';
+import { ISubjectList, IAssignmentDetails, ITimeTableData, INotice, IEvent, IMessData, IRoomData, IClassesSchedule } from '../constants/types';
 
 export type TStackNavType={
     Dashboard:undefined;
@@ -37,6 +37,9 @@ export type TStackNavType={
     Mess:{
         messData?:IMessData;
     };
+    Class:{
+        classData?:IClassesSchedule;
+    }
 };
 export type TopTabAttendanceParamList = {
     Recent: undefined;

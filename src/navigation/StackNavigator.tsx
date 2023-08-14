@@ -21,7 +21,8 @@ import {
   EventDetails,
   Hostel,
   HostelRoom,
-  Mess
+  Mess,
+  Class
 } from '../screens';
 import { useState, useEffect, useMemo } from 'react';
 import type { TStackNavType } from './types';
@@ -123,6 +124,7 @@ const StackNavigator = () => {
           <Stack.Screen name="Hostel" component={Hostel} />
           <Stack.Screen name="HostelRoom" component={HostelRoom} />
           <Stack.Screen name="Mess" component={Mess} />
+          <Stack.Screen name="Class" component={Class} />
         </Stack.Navigator>
       </>
     ),

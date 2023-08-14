@@ -147,7 +147,6 @@ const Holidays = () => {
         "description": "Christmas is a global festival celebrated by Christians all over the world to commemorate the birth of Jesus Christ. It is a time for family gatherings, feasting, and exchanging gifts."
       }
     ]
-
   }
 
 

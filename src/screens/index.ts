@@ -21,4 +21,5 @@ import EventDetails from './events/EventDetails';
 import Hostel from './hostel';
 import HostelRoom from './hostel/HostelRoom';
 import Mess from './hostel/Mess';
-export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notices,NoticeBoard,Holidays,EventsList,EventDetails,Hostel,HostelRoom,Mess}
+import Class from './classroom/Class';
+export {SplashScreen,Dashboard,SignIn,ForgotPassword,Profile,Attendance,UnderConstruction,Classroom,ChangePassword,Assignments,AssignmentScreen,AssignmentDetail,Timetable,TimeTableScreen,Result,Notices,NoticeBoard,Holidays,EventsList,EventDetails,Hostel,HostelRoom,Mess,Class}
