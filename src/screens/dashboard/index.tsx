@@ -18,6 +18,7 @@ const Dashboard = () => {
   const attendanceStat = useSelector(
     (state: RootState) => state.attendanceData.attendanceStat,
   );
+
   const navigation = useNavigation<StackNavigationProp<TStackNavType>>();
   return (
     <>
