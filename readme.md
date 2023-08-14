@@ -87,7 +87,7 @@ yarn start
 </div>
 
 
-![...Many more](./src/assets/screenShots/)
+[...Many more](./src/assets/screenShots/)
 
 ### Contributing
 Contributions are welcome! Please follow these guidelines.
