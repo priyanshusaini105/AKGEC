@@ -69,7 +69,7 @@ npm start
 # or
 yarn start
 ```
-##Screenshots
+## Screenshots
 
 ![Dashboard](./src/assets/screenShots/dashboard.jpg)
 ![SignIn](./src/assets/screenShots/SignIn.jpg)
