@@ -1,6 +1,7 @@
 # AKGEC ERP App (Unofficial Concept)
 
-![App Screenshot](src/assets/screenShots/splash.jpg)
+  <img src="./src/assets/screenShots/splash.jpg" alt="App Screenshot" height="300">
+
 
 A comprehensive and concept ERP app developed for AKGEC ERP using React Native, Firebase, and Next.js.
 
@@ -71,9 +72,21 @@ yarn start
 ```
 ## Screenshots
 
-![Dashboard](./src/assets/screenShots/dashboard.jpg)
-![SignIn](./src/assets/screenShots/SignIn.jpg)
-![Result](./src/assets/screenShots/result.jpg)
+## Screenshots
+
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+  <img src="./src/assets/screenShots/dashboard.jpg" alt="Dashboard" height="300">
+  <img src="./src/assets/screenShots/SignIn.jpg" alt="SignIn" height="300">
+  <img src="./src/assets/screenShots/result.jpg" alt="Result" height="300">
+</div>
+
+<div style="text-align: center;">
+  <p>Dashboard - Description of the dashboard.</p>
+  <p>Sign In - Description of the sign-in screen.</p>
+  <p>Result - Description of the result screen.</p>
+</div>
+
+
 ![...Many more](./src/assets/screenShots/)
 
 ### Contributing
