@@ -49,7 +49,7 @@ const assignmentData: ISubjectAssignments = {
     {
       id: 3,
       name: "Assignment 3",
-      dueDate: new Date("2023-03-14T00:00:00.000Z").toDateString(),
+      dueDate: new Date("2023-09-14T00:00:00.000Z").toDateString(),
       isSubmitted: false,
       description: "Write a program to find the maximum element in an array",
       points: {
