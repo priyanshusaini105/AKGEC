@@ -1,6 +1,6 @@
 # AKGEC ERP App (Unofficial Concept)
 
-![App Screenshot](./src/assets/screenShots/splash.jpg)
+![App Screenshot](src/assets/screenShots/splash.jpg)
 
 A comprehensive and concept ERP app developed for AKGEC ERP using React Native, Firebase, and Next.js.
 
@@ -20,7 +20,7 @@ A comprehensive and concept ERP app developed for AKGEC ERP using React Native, 
 
 ## About the Project
 
-AKGEC Erp is the concept project created by [Priyanshu Sain](https://github.com/priyanshusaini105) for providing better, a centralized platform for students and staff to manage various aspects of college life.
+AKGEC Erp is the concept project created by [Priyanshu Sain](https://github.com/priyanshusaini105) for providing better, a centralized platform for students and staff to manage various aspects of college life.  
 The ERP App is a sophisticated and user-friendly solution developed to streamline various administrative and student-related activities at a college. This project was initiated with the goal of enhancing communication, simplifying processes, and promoting efficient management within the college community.
 
 ### Built With
@@ -71,19 +71,10 @@ yarn start
 ```
 ##Screenshots
 
-[Dashboard](./src/assets/screenShots/dashboard.jpg)
-[SignIn](./src/assets/screenShots/SignIn.jpg)
-[Result](./src/assets/screenShots/result.jpg)
-
-## Screenshots
-
-<p float="left">
-  <img src="./src/assets/screenShots/dashboard.jpg" width="200" />
-  <img src="./src/assets/screenShots/SignIn.jpg" width="200" />
-  <img src="./src/assets/screenShots/result.jpg" width="200" />
-</p>
-
-[...Many more](./src/assets/screenShots/)
+![Dashboard](./src/assets/screenShots/dashboard.jpg)
+![SignIn](./src/assets/screenShots/SignIn.jpg)
+![Result](./src/assets/screenShots/result.jpg)
+![...Many more](./src/assets/screenShots/)
 
 ### Contributing
 Contributions are welcome! Please follow these guidelines.
@@ -96,11 +87,11 @@ Contributions are welcome! Please follow these guidelines.
 
 ### Steps to add new screen
 
-step 1: create its folder and component and expoert it through index.ts in screen folder
-step 2: goto types.d.ts of navigation folder and add the screen to the stack or whatevre navigator params list
-step 3: add scren to navigator
-additional steps for dashboard items
-step 4: go to dashboarditems.ts in constant and register i mean add screen here also in type.d.ts of constants add name to dashboarditem targets
+Step 1: create its folder and component and expoert it through index.ts in screen folder .  
+Step 2: Goto types.d.ts of navigation folder and add the screen to the stack or whatevre navigator params list
+Step 3: Add scren to navigator.  
+additional steps for dashboard items.  
+Step 4: go to dashboarditems.ts in constant and register i mean add screen here also in type.d.ts of constants add name to dashboarditem targets.  
 you are ready to go
 
 ## Contacts
