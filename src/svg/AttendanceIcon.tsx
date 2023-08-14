@@ -4,8 +4,8 @@ import Svg, { Circle, Path } from "react-native-svg"
 function AttendanceIcon() {
   return (
     <Svg
-      width={73}
-      height={73}
+      width={60}
+      height={60}
       viewBox="0 0 73 73"
       fill="none"
     >

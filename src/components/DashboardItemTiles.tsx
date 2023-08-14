@@ -25,7 +25,7 @@ const DashboardItemTiles = ({item}: {item: IDashboardItem}) => {
           else navigation.navigate(item.target);
         }}>
         {item.icon}
-        <Text style={{...tw`text-5 text-black text-center font-nunito`}}>{item.name}</Text>
+        <Text style={{...tw`text-4 text-gray-600 text-center font-nunito`}}>{item.name}</Text>
       </TouchableOpacity>
     );
   };

@@ -39,7 +39,7 @@ const Dashboard = () => {
                   attendanceStat.percentagePresent >= 75
                     ? 'green-400'
                     : 'red-400'
-                } text-8 font-nunito-bold`,
+                } text-7 font-nunito-bold`,
               }}>
               {+attendanceStat.percentagePresent.toFixed(2)??0}%
             </Text>
