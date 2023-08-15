@@ -108,4 +108,4 @@ Step 4: go to dashboarditems.ts in constant and register i mean add screen here 
 you are ready to go
 
 ## Contacts
-Priyanshu Saini: [priyanshusaininew@gmailcom](priyanshusaininew@gmailcom)
+Priyanshu Saini: [priyanshusaininew@gmailcom](priyanshusaininew@gmail.com)
